@@ -9,6 +9,7 @@ import { RFPercentage } from 'react-native-responsive-fontsize';
 import LoginScreen from './app/screens/LoginScreen';
 import SignupScreen from './app/screens/SignupScreen';
 import MealPlanScreen from './app/screens/MealPlan9Screen';
+import PersonalizedMealPlanScreen from './app/screens/PersonalizedMealPlanScreen';
 
 //config
 import Colors from './app/config/Colors';
@@ -34,6 +35,7 @@ export default function App() {
         <Stack.Screen name="LoginScreen" component={LoginScreen} />
         <Stack.Screen name="SignupScreen" component={SignupScreen} />
         <Stack.Screen name="MealPlanScreen" component={MealPlanScreen} />
+        <Stack.Screen name="PersonalizedMealPlanScreen" component={PersonalizedMealPlanScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

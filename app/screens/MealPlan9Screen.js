@@ -7,10 +7,11 @@ import { AntDesign } from '@expo/vector-icons';
 //components
 import Screen from './../components/Screen';
 import InputField from './../components/common/InputField';
+import MyAppButton from './../components/common/MyAppButton';
+import MealConfigScreenCart from '../components/MealConfigScreenCart';
 
 //config
 import Colors from '../config/Colors';
-import { Montserrat_600SemiBold } from '@expo-google-fonts/montserrat';
 
 function MealPlanScreen(props) {
 
@@ -24,7 +25,6 @@ function MealPlanScreen(props) {
 
     const [isEnabled, setIsEnabled] = useState(false);
     const toggleSwitch = () => setIsEnabled(previousState => !previousState);
-
 
     const byMealCartData = [
         {
@@ -164,6 +164,33 @@ function MealPlanScreen(props) {
             rightGi: 'Gi:0',
         },
 
+    ]
+
+    const mealPlanConfigurationData = [
+        {
+            date: '8 AM / 12 PM /6 PM',
+            t1: '3 Meals',
+            t2: '0 Snacks',
+            t3: '2L of Water'
+        },
+        {
+            date: '9 AM / 7 PM /6 PM',
+            t1: '3 Meals',
+            t2: '0 Snacks',
+            t3: '2L of Water'
+        },
+        {
+            date: '2 AM / 11 PM /6 PM',
+            t1: 'Breakfast',
+            t2: 'Dinner',
+            t3: '2L of Water'
+        },
+        {
+            date: '4 AM / 12 PM /6 PM',
+            t1: 'Breakfast',
+            t2: 'Dinner',
+            t3: '2L of Water'
+        },
     ]
 
     const [inputField, SetInputField] = useState([
@@ -477,11 +504,40 @@ function MealPlanScreen(props) {
                 null
             }
 
+            {/* Meal Plan Cinfiguration Body */}
+            {activeButton == '2' ?
+                <ScrollView style={{ flex: 1, width: '100%' }} >
+                    <View style={{ justifyContent: 'center', alignItems: 'center', width: '100%' }}>
+                        {mealPlanConfigurationData.map((item, i) => (
+                            <MealConfigScreenCart key={i} t1={item.t1} t2={item.t2} t3={item.t3} date={item.date} />
+                        ))}
+
+                        {/* Button */}
+                        <View style={{ width: "100%", alignItems: "center", marginTop: RFPercentage(5) }}>
+                            <MyAppButton
+                                title="Create Plan"
+                                onPress={() => props.navigation.navigate("PersonalizedMealPlanScreen")}
+                                gradient={true}
+                                bold={false}
+                                borderColor={Colors.primary}
+                                color={Colors.white}
+                                fontFamily={"Montserrat_600SemiBold"}
+                                fontSize={RFPercentage(2.2)}
+                                borderRadius={RFPercentage(30)}
+                                width={"65%"}
+                            />
+                        </View>
+
+                        <View style={{ marginBottom: RFPercentage(5) }} />
+                    </View>
+                </ScrollView>
+                :
+                null
+            }
 
             {/* If GL/GI Table is active */}
             {activeButton == '3' ?
                 <View style={{ justifyContent: 'center', alignItems: 'center', width: '100%' }}>
-
                     {/* Input field */}
                     <View style={{ justifyContent: 'center', alignItems: 'center', width: '100%' }}>
                         {inputField.map((item, i) => (
@@ -538,14 +594,9 @@ function MealPlanScreen(props) {
                         />
                     </View>
 
-                    {/* Glycemic  */}
+                    {/* Glycemic Index active  */}
                     {glGiButton == '1' ?
                         <View style={{ width: '90%', borderRadius: RFPercentage(2), marginTop: RFPercentage(2), height: RFPercentage(46), backgroundColor: Colors.white, justifyContent: 'flex-start', alignItems: 'center' }} >
-
-
-
-
-
 
                             <View style={{ width: '100%', justifyContent: 'center', alignItems: 'center', alignSelf: 'center' }} >
                                 <FlatList
@@ -555,7 +606,6 @@ function MealPlanScreen(props) {
                                     numColumns={1}
                                     keyExtractor={giData => giData.id.toString()}
                                     renderItem={({ item }) =>
-
 
                                         <View style={{ width: RFPercentage(50), justifyContent: 'flex-start', alignItems: 'center', borderBottomColor: Colors.primary, borderBottomWidth: RFPercentage(0.1) }} >
                                             <View style={{ width: '90%', justifyContent: 'center', alignItems: 'center', flexDirection: 'row' }} >
@@ -595,24 +645,24 @@ function MealPlanScreen(props) {
                                     }
                                 />
                             </View>
-
-
-
-
-
-
-
                         </View>
                         :
                         null
                     }
 
-
-
+                    {glGiButton == '2' ?
+                        <Text>
+                            Hello
+                        </Text>
+                        :
+                        null
+                    }
                 </View>
                 :
                 null
             }
+
+
 
         </Screen>
     );

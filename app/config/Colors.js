@@ -3,6 +3,7 @@ export default {
     newGrey: '#EEEBEB',
     secondary: '#75CEF0',
     red: '#F70B0B',
+    purple: '#8B2088',
     white: "#fff",
     black: "black",
     grey: "#d5d5d5",
