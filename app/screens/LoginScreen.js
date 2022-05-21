@@ -5,7 +5,7 @@ import { RFPercentage } from 'react-native-responsive-fontsize';
 //components
 import Screen from './../components/Screen';
 import MyAppButton from './../components/common/MyAppButton';
-import InputField from './../components/common/InputField';
+import LineInputField from './../components/common/LineInputField';
 
 //config
 import Colors from '../config/Colors';
@@ -59,7 +59,7 @@ function LoginScreen(props) {
             return true;
         }
 
-        // props.navigation.navigate("HomeScreen")
+        props.navigation.navigate("MealPlanScreen")
         try {
             // API INTEGRATION WILL COME HERE
         } catch (error) {
@@ -86,7 +86,7 @@ function LoginScreen(props) {
                     <View style={{ marginTop: RFPercentage(5.2), justifyContent: 'center', alignItems: 'center', width: '100%', alignSelf: 'center' }}>
                         {inputField.map((item, i) => (
                             <View key={i} style={{ marginTop: i == 0 ? RFPercentage(8) : RFPercentage(2), alignSelf: 'center' }} >
-                                <InputField
+                                <LineInputField
                                     placeholder={item.placeholder}
                                     placeholderColor={Colors.darkGrey}
                                     placeholderAtCenter={false}
