@@ -21,6 +21,7 @@ function LineInputField({
     borderBottomColor = Colors.white,
     borderWidth = RFPercentage(0),
     fontFamily = null,
+    wide = false,
     placeholderColor = "#B4B6B8",
     borderRadius = RFPercentage(1),
     backgroundColor = Colors.white,
@@ -77,7 +78,7 @@ function LineInputField({
                 ) : null}
             </View>
 
-            <View style={{ width: '90%', height: RFPercentage(0.3), backgroundColor: Colors.black }} >
+            <View style={{ width: wide ? '93%' : '90%', height: RFPercentage(0.1), backgroundColor: Colors.black }} >
             </View>
 
         </View>

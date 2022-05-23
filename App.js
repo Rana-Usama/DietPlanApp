@@ -15,6 +15,9 @@ import AddFoodToMealPlanScreen from './app/screens/AddFoodToMealPlanScreen';
 import ProfileSettingsScreen from './app/screens/ProfileSettingsScreen';
 import AddExcersiseScreen from './app/screens/AddExerciseScreen';
 import PersonalizedWorkoutPlanScreen from './app/screens/PersonalizedWorkoutPlan';
+import AddFoodScreen from './app/screens/AddFoodScreen';
+import WorkoutPlanScreen from './app/screens/WorkoutPlanScreen';
+import AddRecipesScreen from './app/screens/AddRecipesScreen';
 
 //config
 import Colors from './app/config/Colors';
@@ -36,7 +39,7 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="PersonalizedWorkoutPlanScreen">
+      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="MealPlanScreen">
         <Stack.Screen name="LoginScreen" component={LoginScreen} />
         <Stack.Screen name="SignupScreen" component={SignupScreen} />
         <Stack.Screen name="MealPlanScreen" component={MealPlanScreen} />
@@ -46,6 +49,9 @@ export default function App() {
         <Stack.Screen name="ProfileSettingsScreen" component={ProfileSettingsScreen} />
         <Stack.Screen name="AddExcersiseScreen" component={AddExcersiseScreen} />
         <Stack.Screen name="PersonalizedWorkoutPlanScreen" component={PersonalizedWorkoutPlanScreen} />
+        <Stack.Screen name="WorkoutPlanScreen" component={WorkoutPlanScreen} />
+        <Stack.Screen name="AddFoodScreen" component={AddFoodScreen} />
+        <Stack.Screen name="AddRecipesScreen" component={AddRecipesScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

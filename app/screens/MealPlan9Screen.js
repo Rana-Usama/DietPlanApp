@@ -3,6 +3,7 @@ import { View, Text, TouchableOpacity, ScrollView, StyleSheet, ImageBackground, 
 import { RFPercentage } from 'react-native-responsive-fontsize';
 import { Ionicons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
+import { Feather } from '@expo/vector-icons';
 
 //components
 import Screen from './../components/Screen';
@@ -127,6 +128,44 @@ function MealPlanScreen(props) {
 
         },
 
+    ]
+
+    const createdByMeCartData = [
+
+        {
+            id: "0",
+            imageSource: require('../../assets/images/ff1.png'),
+            title: 'Guava',
+            heart: '1'
+        },
+        {
+            id: "1",
+            imageSource: require('../../assets/images/ff2.png'),
+            title: 'Mango',
+            heart: '2'
+
+        },
+        {
+            id: "2",
+            imageSource: require('../../assets/images/ff3.png'),
+            title: 'Orange',
+            heart: '3'
+
+        },
+        {
+            id: "3",
+            imageSource: require('../../assets/images/ff4.png'),
+            title: 'Lychee',
+            heart: '4'
+
+        },
+        {
+            id: "4",
+            imageSource: require('../../assets/images/ff5.png'),
+            title: 'Pumpkin',
+            heart: '4'
+
+        },
     ]
 
     const giData = [
@@ -499,6 +538,96 @@ function MealPlanScreen(props) {
                         null
                     }
 
+                    {/* Created by me Body */}
+                    {recipesButton == '4' ?
+                        <View style={{ justifyContent: 'center', alignItems: 'center', width: '100%', marginTop: RFPercentage(6) }}>
+
+                            <View style={{ marginTop: RFPercentage(15), width: '90%', justifyContent: 'center', alignItems: 'center', flexDirection: 'row' }} >
+                                <TouchableOpacity activeOpacity={0.8} style={{ width: RFPercentage(18), height: RFPercentage(4.5), borderRadius: RFPercentage(10), backgroundColor: Colors.secondary, justifyContent: 'center', alignItems: 'center' }} >
+                                    <Text style={{ fontSize: RFPercentage(2.6), color: Colors.primary }} >
+                                        Add Food
+                                    </Text>
+                                </TouchableOpacity>
+
+                                <TouchableOpacity activeOpacity={0.8} style={{ marginLeft: RFPercentage(7), width: RFPercentage(18), height: RFPercentage(4.5), borderRadius: RFPercentage(10), backgroundColor: Colors.primary, justifyContent: 'center', alignItems: 'center' }} >
+                                    <Text style={{ fontSize: RFPercentage(2.6), color: Colors.secondary }} >
+                                        Add Recipe
+                                    </Text>
+                                </TouchableOpacity>
+                            </View>
+
+                            {/* Input field */}
+                            <View style={{ justifyContent: 'center', alignItems: 'center', width: '100%' }}>
+                                {inputField.map((item, i) => (
+                                    <View key={i} style={{ marginTop: i == 0 ? RFPercentage(3.4) : RFPercentage(1.8) }} >
+                                        <InputField
+                                            placeholder={item.placeholder}
+                                            placeholderColor={Colors.darkGrey}
+                                            height={RFPercentage(6)}
+                                            leftIconName={item.iconName}
+                                            backgroundColor={Colors.white}
+                                            borderWidth={RFPercentage(0.2)}
+                                            borderColor={Colors.white}
+                                            secure={item.secure}
+                                            borderRadius={RFPercentage(20)}
+                                            color={Colors.black}
+                                            fontSize={RFPercentage(2)}
+                                            handleFeild={(text) => handleChange(text, i)}
+                                            value={item.value}
+                                            width={"92%"}
+                                        />
+                                    </View>
+                                ))}
+                            </View>
+
+                            <View style={{ width: '100%', justifyContent: 'center', alignItems: 'center', alignSelf: 'center' }} >
+                                <FlatList
+                                    data={createdByMeCartData}
+                                    contentContainerStyle={{ height: RFPercentage(150) }}
+                                    showsVerticalScrollIndicator={false}
+                                    numColumns={2}
+                                    keyExtractor={createdByMeCartData => createdByMeCartData.id.toString()}
+                                    renderItem={({ item }) =>
+
+                                        <TouchableOpacity activeOpacity={0.8} style={{ marginHorizontal: RFPercentage(1.5), marginVertical: RFPercentage(2.2) }} >
+                                            <ImageBackground style={{ overflow: 'hidden', width: RFPercentage(22), height: RFPercentage(24), borderRadius: RFPercentage(3) }} source={item.imageSource} >
+                                                {/* Heart and Plus Icon */}
+                                                <View style={{ marginTop: RFPercentage(2), width: '96%', justifyContent: 'flex-end', alignItems: 'center', flexDirection: 'row' }} >
+                                                    <TouchableOpacity activeOpacity={0.8} style={{ marginLeft: RFPercentage(1), position: 'absolute', left: 0 }} >
+                                                        <Feather name="minus-circle" style={{ fontSize: RFPercentage(3.6) }} color={Colors.primary} />
+                                                    </TouchableOpacity>
+                                                    {heart ?
+                                                        <TouchableOpacity activeOpacity={0.8} onPress={() => setHeart(false)} >
+                                                            <AntDesign name="heart" style={{ fontSize: RFPercentage(3.5) }} color={Colors.red} />
+                                                        </TouchableOpacity>
+                                                        :
+                                                        <TouchableOpacity activeOpacity={0.8} onPress={() => setHeart(true)}   >
+                                                            <AntDesign name="heart" style={{ fontSize: RFPercentage(3.5) }} color={"rgba(139, 32, 136, 0.24)"} />
+                                                        </TouchableOpacity>
+                                                    }
+
+                                                    <TouchableOpacity activeOpacity={0.8} style={{ marginLeft: RFPercentage(1.5) }} >
+                                                        <AntDesign name="pluscircleo" style={{ fontSize: RFPercentage(3.5) }} color={Colors.purple} />
+                                                    </TouchableOpacity>
+                                                </View>
+                                                {/* Bottom View of Image */}
+                                                <View style={{ position: 'absolute', bottom: 0, width: '100%', height: RFPercentage(6), backgroundColor: Colors.newInputFieldBorder, justifyContent: 'center', alignItems: 'center' }} >
+                                                    <Text style={{ color: Colors.primary, fontSize: RFPercentage(1.9), fontFamily: 'Montserrat_600SemiBold' }} >
+                                                        {item.title}
+                                                    </Text>
+                                                </View>
+                                            </ImageBackground>
+                                        </TouchableOpacity>
+                                    }
+                                />
+                            </View>
+
+                            <View style={{ marginBottom: RFPercentage(6) }} />
+                        </View>
+                        :
+                        null
+                    }
+
                 </>
                 :
                 null
@@ -661,8 +790,6 @@ function MealPlanScreen(props) {
                 :
                 null
             }
-
-
 
         </Screen>
     );
