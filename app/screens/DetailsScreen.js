@@ -72,8 +72,6 @@ function DetailsScreen(props) {
                 </View>
 
             </View>
-
-
         </Screen>
     );
 }
