@@ -10,6 +10,8 @@ import LoginScreen from './app/screens/LoginScreen';
 import SignupScreen from './app/screens/SignupScreen';
 import MealPlanScreen from './app/screens/MealPlan9Screen';
 import PersonalizedMealPlanScreen from './app/screens/PersonalizedMealPlanScreen';
+import DetailsScreen from './app/screens/DetailsScreen';
+import AddFoodToMealPlanScreen from './app/screens/AddFoodToMealPlanScreen';
 
 //config
 import Colors from './app/config/Colors';
@@ -31,11 +33,13 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="MealPlanScreen">
+      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="DetailsScreen">
         <Stack.Screen name="LoginScreen" component={LoginScreen} />
         <Stack.Screen name="SignupScreen" component={SignupScreen} />
         <Stack.Screen name="MealPlanScreen" component={MealPlanScreen} />
         <Stack.Screen name="PersonalizedMealPlanScreen" component={PersonalizedMealPlanScreen} />
+        <Stack.Screen name="AddFoodToMealPlanScreen" component={AddFoodToMealPlanScreen} />
+        <Stack.Screen name="DetailsScreen" component={DetailsScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
