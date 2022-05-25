@@ -5,6 +5,7 @@ import { Ionicons } from '@expo/vector-icons';
 
 //components
 import Screen from './../components/Screen';
+import BottomTab from '../components/common/BottomTab';
 
 //config
 import Colors from '../config/Colors';
@@ -63,6 +64,8 @@ function AddWeightScreen(props) {
                     </View>
                 </View>
             </ScrollView>
+
+            <BottomTab props={props} />
         </Screen>
     );
 }

@@ -8,6 +8,7 @@ import { TextInput } from 'react-native';
 import Screen from './../components/Screen';
 import InputField from './../components/common/InputField';
 import MyAppButton from './../components/common/MyAppButton';
+import BottomTab from '../components/common/BottomTab';
 
 //config
 import Colors from '../config/Colors';
@@ -57,7 +58,7 @@ function PersonalizedWorkoutPlanScreen(props) {
             {/* Nav */}
             <ImageBackground style={{ justifyContent: 'center', alignItems: 'center', width: '100%', height: RFPercentage(31.6) }} source={require('../../assets/images/top.png')} >
                 {/* <View style={{ marginTop: RFPercentage(8), width: '90%', justifyContent: 'center', alignItems: 'center', alignSelf: 'center' }} > */}
-                <TouchableOpacity activeOpacity={0.8} style={{ position: 'absolute', left: RFPercentage(2.5), top: RFPercentage(6), width: RFPercentage(5), height: RFPercentage(5), borderRadius: RFPercentage(30), backgroundColor: Colors.white, justifyContent: 'center', alignItems: 'center' }} >
+                <TouchableOpacity onPress={() => props.navigation.navigate("WorkoutPlanScreen")} activeOpacity={0.8} style={{ position: 'absolute', left: RFPercentage(2.5), top: RFPercentage(6), width: RFPercentage(5), height: RFPercentage(5), borderRadius: RFPercentage(30), backgroundColor: Colors.white, justifyContent: 'center', alignItems: 'center' }} >
                     <Ionicons name="chevron-back" style={{ fontSize: RFPercentage(3.4) }} color={Colors.black} />
                 </TouchableOpacity>
                 <Text style={{ color: Colors.primary, fontSize: RFPercentage(3.9), fontFamily: 'Montserrat_700Bold' }} >
@@ -219,9 +220,10 @@ function PersonalizedWorkoutPlanScreen(props) {
                         </ScrollView>
                     </View>
 
-                    <View style={{ marginBottom: RFPercentage(4) }} />
+                    <View style={{ marginBottom: RFPercentage(12) }} />
                 </View>
             </ScrollView>
+            <BottomTab props={props} />
         </Screen>
     );
 }

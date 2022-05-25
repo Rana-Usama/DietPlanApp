@@ -13,6 +13,7 @@ import MealConfigScreenCart from '../components/MealConfigScreenCart';
 
 //config
 import Colors from '../config/Colors';
+import BottomTab from './../components/common/BottomTab';
 
 function MealPlanScreen(props) {
 
@@ -381,7 +382,7 @@ function MealPlanScreen(props) {
                                     </View>
                                 ))}
 
-                                <View style={{ marginBottom: RFPercentage(6) }} />
+                                <View style={{ marginBottom: RFPercentage(12) }} />
                             </View>
                         </ScrollView>
                         :
@@ -421,7 +422,7 @@ function MealPlanScreen(props) {
                             <View style={{ width: '100%', justifyContent: 'center', alignItems: 'center', alignSelf: 'center' }} >
                                 <FlatList
                                     data={allCartData}
-                                    contentContainerStyle={{ height: RFPercentage(120) }}
+                                    contentContainerStyle={{ height: RFPercentage(110) }}
                                     showsVerticalScrollIndicator={false}
                                     numColumns={2}
                                     keyExtractor={allCartData => allCartData.id.toString()}
@@ -431,17 +432,9 @@ function MealPlanScreen(props) {
                                             <ImageBackground style={{ overflow: 'hidden', width: RFPercentage(22), height: RFPercentage(24), borderRadius: RFPercentage(3) }} source={item.imageSource} >
                                                 {/* Heart and Plus Icon */}
                                                 <View style={{ marginTop: RFPercentage(2), width: '96%', justifyContent: 'flex-end', alignItems: 'center', flexDirection: 'row' }} >
-
-                                                    {heart ?
-                                                        <TouchableOpacity activeOpacity={0.8} onPress={() => setHeart(false)} >
-                                                            <AntDesign name="heart" style={{ fontSize: RFPercentage(3.5) }} color={Colors.red} />
-                                                        </TouchableOpacity>
-                                                        :
-                                                        <TouchableOpacity activeOpacity={0.8} onPress={() => setHeart(true)}   >
-                                                            <AntDesign name="heart" style={{ fontSize: RFPercentage(3.5) }} color={"rgba(139, 32, 136, 0.24)"} />
-                                                        </TouchableOpacity>
-                                                    }
-
+                                                    <TouchableOpacity activeOpacity={0.8} onPress={() => setHeart(true)}   >
+                                                        <AntDesign name="heart" style={{ fontSize: RFPercentage(3.5) }} color={"rgba(139, 32, 136, 0.4)"} />
+                                                    </TouchableOpacity>
                                                     <TouchableOpacity activeOpacity={0.8} style={{ marginLeft: RFPercentage(1.5) }} >
                                                         <AntDesign name="pluscircleo" style={{ fontSize: RFPercentage(3.5) }} color={Colors.white} />
                                                     </TouchableOpacity>
@@ -458,7 +451,7 @@ function MealPlanScreen(props) {
                                 />
                             </View>
 
-                            <View style={{ marginBottom: RFPercentage(6) }} />
+                            <View style={{ marginBottom: RFPercentage(2) }} />
                         </View>
                         :
                         null
@@ -495,7 +488,7 @@ function MealPlanScreen(props) {
                             <View style={{ width: '100%', justifyContent: 'center', alignItems: 'center', alignSelf: 'center' }} >
                                 <FlatList
                                     data={foodsFavouriteCartData}
-                                    contentContainerStyle={{ height: RFPercentage(130) }}
+                                    contentContainerStyle={{ height: RFPercentage(140) }}
                                     showsVerticalScrollIndicator={false}
                                     numColumns={2}
                                     keyExtractor={foodsFavouriteCartData => foodsFavouriteCartData.id.toString()}
@@ -505,17 +498,9 @@ function MealPlanScreen(props) {
                                             <ImageBackground style={{ overflow: 'hidden', width: RFPercentage(22), height: RFPercentage(24), borderRadius: RFPercentage(3) }} source={item.imageSource} >
                                                 {/* Heart and Plus Icon */}
                                                 <View style={{ marginTop: RFPercentage(2), width: '96%', justifyContent: 'flex-end', alignItems: 'center', flexDirection: 'row' }} >
-
-                                                    {heart ?
-                                                        <TouchableOpacity activeOpacity={0.8} onPress={() => setHeart(false)} >
-                                                            <AntDesign name="heart" style={{ fontSize: RFPercentage(3.5) }} color={Colors.red} />
-                                                        </TouchableOpacity>
-                                                        :
-                                                        <TouchableOpacity activeOpacity={0.8} onPress={() => setHeart(true)}   >
-                                                            <AntDesign name="heart" style={{ fontSize: RFPercentage(3.5) }} color={"rgba(139, 32, 136, 0.24)"} />
-                                                        </TouchableOpacity>
-                                                    }
-
+                                                    <TouchableOpacity activeOpacity={0.8} onPress={() => setHeart(true)}   >
+                                                        <AntDesign name="heart" style={{ fontSize: RFPercentage(3.5) }} color={"rgba(139, 32, 136, 0.4)"} />
+                                                    </TouchableOpacity>
                                                     <TouchableOpacity activeOpacity={0.8} style={{ marginLeft: RFPercentage(1.5) }} >
                                                         <AntDesign name="pluscircleo" style={{ fontSize: RFPercentage(3.5) }} color={Colors.primary} />
                                                     </TouchableOpacity>
@@ -583,7 +568,7 @@ function MealPlanScreen(props) {
                             <View style={{ width: '100%', justifyContent: 'center', alignItems: 'center', alignSelf: 'center' }} >
                                 <FlatList
                                     data={createdByMeCartData}
-                                    contentContainerStyle={{ height: RFPercentage(150) }}
+                                    contentContainerStyle={{ height: RFPercentage(160) }}
                                     showsVerticalScrollIndicator={false}
                                     numColumns={2}
                                     keyExtractor={createdByMeCartData => createdByMeCartData.id.toString()}
@@ -596,16 +581,9 @@ function MealPlanScreen(props) {
                                                     <TouchableOpacity activeOpacity={0.8} style={{ marginLeft: RFPercentage(1), position: 'absolute', left: 0 }} >
                                                         <Feather name="minus-circle" style={{ fontSize: RFPercentage(3.6) }} color={Colors.primary} />
                                                     </TouchableOpacity>
-                                                    {heart ?
-                                                        <TouchableOpacity activeOpacity={0.8} onPress={() => setHeart(false)} >
-                                                            <AntDesign name="heart" style={{ fontSize: RFPercentage(3.5) }} color={Colors.red} />
-                                                        </TouchableOpacity>
-                                                        :
-                                                        <TouchableOpacity activeOpacity={0.8} onPress={() => setHeart(true)}   >
-                                                            <AntDesign name="heart" style={{ fontSize: RFPercentage(3.5) }} color={"rgba(139, 32, 136, 0.24)"} />
-                                                        </TouchableOpacity>
-                                                    }
-
+                                                    <TouchableOpacity activeOpacity={0.8} onPress={() => setHeart(true)}   >
+                                                        <AntDesign name="heart" style={{ fontSize: RFPercentage(3.5) }} color={"rgba(139, 32, 136, 0.4)"} />
+                                                    </TouchableOpacity>
                                                     <TouchableOpacity activeOpacity={0.8} style={{ marginLeft: RFPercentage(1.5) }} >
                                                         <AntDesign name="pluscircleo" style={{ fontSize: RFPercentage(3.5) }} color={Colors.purple} />
                                                     </TouchableOpacity>
@@ -657,7 +635,7 @@ function MealPlanScreen(props) {
                             />
                         </View>
 
-                        <View style={{ marginBottom: RFPercentage(5) }} />
+                        <View style={{ marginBottom: RFPercentage(12) }} />
                     </View>
                 </ScrollView>
                 :
@@ -790,6 +768,8 @@ function MealPlanScreen(props) {
                 :
                 null
             }
+
+            <BottomTab props={props} />
 
         </Screen>
     );

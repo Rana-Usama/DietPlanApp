@@ -9,10 +9,11 @@ import Screen from './../components/Screen';
 import InputField from './../components/common/InputField';
 import MyAppButton from './../components/common/MyAppButton';
 import MealConfigScreenCart from '../components/MealConfigScreenCart';
+import BottomTab from '../components/common/BottomTab';
+import WorkoutConfiguratorScreenCart from './../components/WorkoutConfiguratorScreenCart';
 
 //config
 import Colors from '../config/Colors';
-import WorkoutConfiguratorScreenCart from './../components/WorkoutConfiguratorScreenCart';
 
 function WorkoutPlanScreen(props) {
 
@@ -225,7 +226,7 @@ function WorkoutPlanScreen(props) {
                             <View style={{ width: '100%', justifyContent: 'center', alignItems: 'center', alignSelf: 'center' }} >
                                 <FlatList
                                     data={foodsFavouriteCartData}
-                                    contentContainerStyle={{ height: RFPercentage(140) }}
+                                    contentContainerStyle={{ height: RFPercentage(150) }}
                                     showsVerticalScrollIndicator={false}
                                     numColumns={2}
                                     keyExtractor={foodsFavouriteCartData => foodsFavouriteCartData.id.toString()}
@@ -273,7 +274,7 @@ function WorkoutPlanScreen(props) {
                         {/* Button */}
                         <View style={{ width: "100%", alignItems: "center", marginTop: RFPercentage(5) }}>
                             <MyAppButton
-                                title="Create Plan"
+                                title="Create Workout Plan"
                                 onPress={() => props.navigation.navigate("PersonalizedMealPlanScreen")}
                                 gradient={true}
                                 bold={false}
@@ -282,20 +283,17 @@ function WorkoutPlanScreen(props) {
                                 fontFamily={"Montserrat_600SemiBold"}
                                 fontSize={RFPercentage(2.2)}
                                 borderRadius={RFPercentage(30)}
-                                width={"65%"}
+                                width={"72%"}
                             />
                         </View>
 
-                        <View style={{ marginBottom: RFPercentage(5) }} />
+                        <View style={{ marginBottom: RFPercentage(12) }} />
                     </View>
                 </ScrollView>
                 :
                 null
             }
-
-
-
-
+            <BottomTab props={props} />
         </Screen>
     );
 }

@@ -8,6 +8,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 //components
 import Screen from './../components/Screen';
 import MyAppButton from './../components/common/MyAppButton';
+import BottomTab from '../components/common/BottomTab';
 
 //config
 import Colors from '../config/Colors';
@@ -224,9 +225,11 @@ function ProfileSettingsScreen(props) {
                         />
                     </View>
 
-                    <View style={{ marginBottom: RFPercentage(3) }} />
+                    <View style={{ marginBottom: RFPercentage(12) }} />
                 </View>
             </ScrollView>
+
+            <BottomTab props={props} />
         </Screen>
     );
 }

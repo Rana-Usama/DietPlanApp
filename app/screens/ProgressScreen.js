@@ -6,6 +6,7 @@ import { Feather } from '@expo/vector-icons';
 
 //components
 import Screen from './../components/Screen';
+import BottomTab from '../components/common/BottomTab';
 
 //config
 import Colors from '../config/Colors';
@@ -224,7 +225,7 @@ function ProgressScreen(props) {
 
                                     </ScrollView>
                                 </View>
-                                <View style={{ marginBottom: RFPercentage(6) }} />
+                                <View style={{ marginBottom: RFPercentage(12) }} />
                             </View>
                         </ScrollView>
                         :
@@ -316,13 +317,15 @@ function ProgressScreen(props) {
 
                                 </ScrollView>
                             </View>
-                            <View style={{ marginBottom: RFPercentage(6) }} />
+                            <View style={{ marginBottom: RFPercentage(12) }} />
                         </View>
                     </ScrollView>
                 </>
                 :
                 null
             }
+
+            <BottomTab props={props} />
         </Screen>
     );
 }

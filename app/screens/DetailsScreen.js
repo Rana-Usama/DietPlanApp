@@ -6,6 +6,7 @@ import { AntDesign } from '@expo/vector-icons';
 
 //components
 import Screen from './../components/Screen';
+import BottomTab from '../components/common/BottomTab';
 
 //config
 import Colors from '../config/Colors';
@@ -20,7 +21,7 @@ function DetailsScreen(props) {
             {/* Nav */}
             <ImageBackground style={{ justifyContent: 'flex-start', alignItems: 'center', width: '100%', height: RFPercentage(31.6) }} source={require('../../assets/images/top.png')} >
                 <View style={{ marginTop: RFPercentage(5), width: '84%', justifyContent: 'center', alignItems: 'flex-start' }} >
-                    <TouchableOpacity activeOpacity={0.8} style={{ width: RFPercentage(5), height: RFPercentage(5), borderRadius: RFPercentage(30), backgroundColor: Colors.white, justifyContent: 'center', alignItems: 'center' }} >
+                    <TouchableOpacity onPress={() => props.navigation.navigate("AddFoodToMealPlanScreen")} activeOpacity={0.8} style={{ width: RFPercentage(5), height: RFPercentage(5), borderRadius: RFPercentage(30), backgroundColor: Colors.white, justifyContent: 'center', alignItems: 'center' }} >
                         <Ionicons name="chevron-back" style={{ fontSize: RFPercentage(3.4) }} color={Colors.black} />
                     </TouchableOpacity>
                     <View style={{ position: 'absolute', right: 0, flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }} >
@@ -70,8 +71,9 @@ function DetailsScreen(props) {
                         ut magna in mollis placerat accumsan, quis porttitor.
                     </Text>
                 </View>
-
             </View>
+
+            <BottomTab props={props} />
         </Screen>
     );
 }
