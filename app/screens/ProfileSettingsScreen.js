@@ -97,7 +97,7 @@ function ProfileSettingsScreen(props) {
                                 Notification with
                             </Text>
                         </View>
-                        <View style={{ right: RFPercentage(1), width: RFPercentage(13), height: RFPercentage(5.5), backgroundColor: Colors.white, borderRadius: RFPercentage(20), justifyContent: 'center', alignItems: 'center' }} >
+                        <View style={{ width: RFPercentage(13), height: RFPercentage(5.5), backgroundColor: Colors.white, borderRadius: RFPercentage(20), justifyContent: 'center', alignItems: 'center' }} >
                             <View style={{ width: '80%', justifyContent: 'center', alignItems: 'center' }} >
                                 <RNPickerSelect
                                     onValueChange={(value) => console.log(value)}
@@ -131,7 +131,7 @@ function ProfileSettingsScreen(props) {
                                 Notification with
                             </Text>
                         </View>
-                        <View style={{ right: RFPercentage(1), width: RFPercentage(13), height: RFPercentage(5.5), backgroundColor: Colors.white, borderRadius: RFPercentage(20), justifyContent: 'center', alignItems: 'center' }} >
+                        <View style={{ width: RFPercentage(13), height: RFPercentage(5.5), backgroundColor: Colors.white, borderRadius: RFPercentage(20), justifyContent: 'center', alignItems: 'center' }} >
                             <View style={{ width: '80%', justifyContent: 'center', alignItems: 'center' }} >
                                 <RNPickerSelect
                                     onValueChange={(value) => console.log(value)}
@@ -165,7 +165,7 @@ function ProfileSettingsScreen(props) {
                                 Notification every
                             </Text>
                         </View>
-                        <View style={{ right: RFPercentage(1), width: RFPercentage(13), height: RFPercentage(5.5), backgroundColor: Colors.white, borderRadius: RFPercentage(20), justifyContent: 'center', alignItems: 'center' }} >
+                        <View style={{ width: RFPercentage(13), height: RFPercentage(5.5), backgroundColor: Colors.white, borderRadius: RFPercentage(20), justifyContent: 'center', alignItems: 'center' }} >
                             <View style={{ width: '80%', justifyContent: 'center', alignItems: 'center' }} >
                                 <RNPickerSelect
                                     onValueChange={(value) => console.log(value)}
