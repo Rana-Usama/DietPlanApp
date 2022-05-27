@@ -32,6 +32,10 @@ function ScheduleScreen(props) {
 
     const [check, setCheck] = useState('0');
 
+    const [firstCheck, setFirstCheck] = useState(false);
+
+
+
     const todayCartData = [
         {
             time: '10:00 AM',
@@ -84,7 +88,7 @@ function ScheduleScreen(props) {
                 {/* First List */}
                 <View style={{ marginLeft: RFPercentage(2.8), flexDirection: 'row', marginTop: RFPercentage(5), width: '90%', justifyContent: 'flex-start', alignItems: 'center', alignSelf: 'flex-start' }} >
                     <TouchableOpacity activeOpacity={0.8} onPress={() => setActiveButton('1')} style={{ justifyContent: 'center', alignItems: 'center' }}  >
-                        <Text style={{ color: Colors.primary, fontSize: RFPercentage(2), fontFamily: 'Montserrat_600SemiBold' }} >
+                        <Text style={{ color: Colors.primary, fontSize: RFPercentage(1.9), fontFamily: 'Montserrat_600SemiBold' }} >
                             Today
                         </Text>
                         {activeButton == '1' ?
@@ -95,7 +99,7 @@ function ScheduleScreen(props) {
                     </TouchableOpacity>
 
                     <TouchableOpacity activeOpacity={0.8} onPress={() => setActiveButton('2')} style={{ marginLeft: RFPercentage(4), justifyContent: 'center', alignItems: 'center' }}  >
-                        <Text style={{ color: Colors.primary, fontSize: RFPercentage(2), fontFamily: 'Montserrat_600SemiBold' }} >
+                        <Text style={{ color: Colors.primary, fontSize: RFPercentage(1.9), fontFamily: 'Montserrat_600SemiBold' }} >
                             Tomorrow
                         </Text>
                         {activeButton == '2' ?
@@ -246,8 +250,8 @@ function ScheduleScreen(props) {
                                         Mood
                                     </Text>
                                     <View style={{ position: 'absolute', right: 0 }} >
-                                        <TouchableOpacity onPress={() => setCheck('1')} activeOpacity={0.8} style={{ width: RFPercentage(3), height: RFPercentage(3), borderColor: Colors.darkGrey, borderWidth: RFPercentage(0.1), backgroundColor: Colors.white, justifyContent: 'center', alignItems: 'center', borderRadius: RFPercentage(20) }} >
-                                            {check == '1' ?
+                                        <TouchableOpacity onPress={() => setFirstCheck(true)} activeOpacity={0.8} style={{ width: RFPercentage(3), height: RFPercentage(3), borderColor: Colors.darkGrey, borderWidth: RFPercentage(0.1), backgroundColor: Colors.white, justifyContent: 'center', alignItems: 'center', borderRadius: RFPercentage(20) }} >
+                                            {firstCheck ?
                                                 <TouchableOpacity activeOpacity={0.8} style={{ borderRadius: RFPercentage(6), width: RFPercentage(2), height: RFPercentage(2), backgroundColor: Colors.darkGrey }} />
                                                 :
                                                 null

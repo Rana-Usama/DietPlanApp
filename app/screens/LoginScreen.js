@@ -59,7 +59,7 @@ function LoginScreen(props) {
             return true;
         }
 
-        props.navigation.navigate("MealPlanScreen")
+        props.navigation.navigate("ScheduleScreen")
         try {
             // API INTEGRATION WILL COME HERE
         } catch (error) {

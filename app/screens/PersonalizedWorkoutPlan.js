@@ -61,10 +61,10 @@ function PersonalizedWorkoutPlanScreen(props) {
                 <TouchableOpacity onPress={() => props.navigation.navigate("WorkoutPlanScreen")} activeOpacity={0.8} style={{ position: 'absolute', left: RFPercentage(2.5), top: RFPercentage(6), width: RFPercentage(5), height: RFPercentage(5), borderRadius: RFPercentage(30), backgroundColor: Colors.white, justifyContent: 'center', alignItems: 'center' }} >
                     <Ionicons name="chevron-back" style={{ fontSize: RFPercentage(3.4) }} color={Colors.black} />
                 </TouchableOpacity>
-                <Text style={{ color: Colors.primary, fontSize: RFPercentage(3.9), fontFamily: 'Montserrat_700Bold' }} >
+                <Text style={{ color: Colors.primary, fontSize: RFPercentage(3.3), fontFamily: 'Montserrat_700Bold' }} >
                     Personalized
                 </Text>
-                <Text style={{ color: Colors.primary, fontSize: RFPercentage(3.9), fontFamily: 'Montserrat_700Bold' }} >
+                <Text style={{ color: Colors.primary, fontSize: RFPercentage(3.3), fontFamily: 'Montserrat_700Bold' }} >
                     Workout Plan
                 </Text>
                 {/* </View> */}
@@ -117,7 +117,7 @@ function PersonalizedWorkoutPlanScreen(props) {
                     </View>
 
                     {/* White Box */}
-                    <View style={{ marginTop: RFPercentage(3), borderRadius: RFPercentage(2), width: '85%', height: RFPercentage(40), backgroundColor: Colors.white, justifyContent: 'flex-start', alignItems: 'center' }} >
+                    <View style={{ marginTop: RFPercentage(3), borderRadius: RFPercentage(2), width: '85%', height: RFPercentage(45), backgroundColor: Colors.white, justifyContent: 'flex-start', alignItems: 'center' }} >
                         <ScrollView style={{ flex: 1, width: '100%' }} >
                             <View style={{ justifyContent: 'center', alignItems: 'center', width: '100%' }}>
                                 {/*Meal Plan Name Input field */}
@@ -200,7 +200,7 @@ function PersonalizedWorkoutPlanScreen(props) {
                                 <View style={{ marginTop: RFPercentage(5), width: '100%', height: RFPercentage(0.1), backgroundColor: Colors.grey }} />
 
                                 {/* Button */}
-                                <View style={{ width: "100%", alignItems: "center", marginTop: RFPercentage(3) }}>
+                                <View style={{ width: "100%", alignItems: "center", marginTop: RFPercentage(4) }}>
                                     <MyAppButton
                                         title="Add"
                                         // onPress={() => handleLogin()}

@@ -71,7 +71,7 @@ function PersonalizedMealPlanScreen(props) {
                     <View style={{ justifyContent: 'center', alignItems: 'center', width: '100%' }}>
                         {inputField.map((item, i) => (
                             <View key={i} style={{ justifyContent: 'center', alignItems: 'center', flexDirection: 'row', marginTop: i == 0 ? RFPercentage(2) : RFPercentage(1.8) }} >
-                                <Text style={{ marginRight: RFPercentage(4), color: Colors.primary, fontSize: RFPercentage(2.2), fontFamily: 'Montserrat_500Medium' }} >
+                                <Text style={{ marginRight: RFPercentage(4), color: Colors.primary, fontSize: RFPercentage(2), fontFamily: 'Montserrat_500Medium' }} >
                                     {item.title}
                                 </Text>
                                 <InputField

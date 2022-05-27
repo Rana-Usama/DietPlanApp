@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, ImageBackground, Switch, ScrollView } from 'react-native'
+import { View, Text, TouchableOpacity, ImageBackground, Switch, ScrollView, Platform } from 'react-native'
 import { RFPercentage } from 'react-native-responsive-fontsize';
 import RNPickerSelect from 'react-native-picker-select';
 import { Ionicons } from '@expo/vector-icons';
@@ -48,7 +48,7 @@ function ProfileSettingsScreen(props) {
                         <Ionicons name="chevron-back" style={{ fontSize: RFPercentage(3.4) }} color={Colors.black} />
                     </TouchableOpacity>
                 </View>
-                <Text style={{ color: Colors.primary, fontSize: RFPercentage(3.9), marginTop: RFPercentage(4), fontFamily: 'Montserrat_700Bold' }} >
+                <Text style={{ color: Colors.primary, fontSize: RFPercentage(3.7), marginTop: RFPercentage(4), fontFamily: 'Montserrat_700Bold' }} >
                     Profile Settings
                 </Text>
                 <View style={{ width: '90%', position: 'absolute', bottom: RFPercentage(4), left: RFPercentage(2), flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center' }} >
@@ -98,11 +98,11 @@ function ProfileSettingsScreen(props) {
                             </Text>
                         </View>
                         <View style={{ width: RFPercentage(13), height: RFPercentage(5.5), backgroundColor: Colors.white, borderRadius: RFPercentage(20), justifyContent: 'center', alignItems: 'center' }} >
-                            <View style={{ width: '80%', justifyContent: 'center', alignItems: 'center' }} >
+                            <View style={{ width: '98%', justifyContent: 'center', alignItems: 'center' }} >
                                 <RNPickerSelect
                                     onValueChange={(value) => console.log(value)}
                                     placeholder={{ label: ' ' }}
-                                    Icon={iconComponent}
+                                    Icon={Platform.OS == 'android' ? null : iconComponent}
                                     items={[
                                         { label: '15 min', value: '15' },
                                         { label: '1 hr', value: '1' },
@@ -132,11 +132,11 @@ function ProfileSettingsScreen(props) {
                             </Text>
                         </View>
                         <View style={{ width: RFPercentage(13), height: RFPercentage(5.5), backgroundColor: Colors.white, borderRadius: RFPercentage(20), justifyContent: 'center', alignItems: 'center' }} >
-                            <View style={{ width: '80%', justifyContent: 'center', alignItems: 'center' }} >
+                            <View style={{ width: '98%', justifyContent: 'center', alignItems: 'center' }} >
                                 <RNPickerSelect
                                     onValueChange={(value) => console.log(value)}
                                     placeholder={{ label: ' ' }}
-                                    Icon={iconComponent}
+                                    Icon={Platform.OS == 'android' ? null : iconComponent}
                                     items={[
                                         { label: '15 min', value: '15' },
                                         { label: '1 hr', value: '1' },
@@ -166,11 +166,11 @@ function ProfileSettingsScreen(props) {
                             </Text>
                         </View>
                         <View style={{ width: RFPercentage(13), height: RFPercentage(5.5), backgroundColor: Colors.white, borderRadius: RFPercentage(20), justifyContent: 'center', alignItems: 'center' }} >
-                            <View style={{ width: '80%', justifyContent: 'center', alignItems: 'center' }} >
+                            <View style={{ width: '98%', justifyContent: 'center', alignItems: 'center' }} >
                                 <RNPickerSelect
                                     onValueChange={(value) => console.log(value)}
                                     placeholder={{ label: ' ' }}
-                                    Icon={iconComponent}
+                                    Icon={Platform.OS == 'android' ? null : iconComponent}
                                     items={[
                                         { label: '15 min', value: '15' },
                                         { label: '1 hr', value: '1' },
@@ -204,9 +204,9 @@ function ProfileSettingsScreen(props) {
                             borderColor={Colors.primary}
                             color={Colors.white}
                             fontFamily={"Montserrat_600SemiBold"}
-                            fontSize={RFPercentage(2.2)}
+                            fontSize={RFPercentage(2.1)}
                             borderRadius={RFPercentage(30)}
-                            width={"66%"}
+                            width={"70%"}
                         />
                     </View>
                     {/* Button */}
@@ -219,9 +219,9 @@ function ProfileSettingsScreen(props) {
                             borderColor={Colors.primary}
                             color={Colors.white}
                             fontFamily={"Montserrat_600SemiBold"}
-                            fontSize={RFPercentage(2.2)}
+                            fontSize={RFPercentage(2.1)}
                             borderRadius={RFPercentage(30)}
-                            width={"66%"}
+                            width={"70%"}
                         />
                     </View>
 

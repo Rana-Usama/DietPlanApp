@@ -10,6 +10,7 @@ import BottomTab from '../components/common/BottomTab';
 
 //config
 import Colors from '../config/Colors';
+import AddWeightScreen from './AddWeightScreen';
 
 function ProgressScreen(props) {
 
@@ -21,19 +22,19 @@ function ProgressScreen(props) {
         <Screen style={styles.screen}>
             {/* Nav */}
             <ImageBackground style={{ justifyContent: 'flex-start', alignItems: 'center', width: '100%', height: RFPercentage(32) }} source={require('../../assets/images/top.png')} >
-                <View style={{ marginTop: RFPercentage(5), width: '90%', justifyContent: 'center', alignItems: 'center', alignSelf: 'center' }} >
+                <View style={{ marginTop: RFPercentage(6), width: '90%', justifyContent: 'center', alignItems: 'center', alignSelf: 'center' }} >
                     <TouchableOpacity onPress={() => props.navigation.navigate("LoginScreen")} activeOpacity={0.8} style={{ position: 'absolute', left: 0, width: RFPercentage(5), height: RFPercentage(5), borderRadius: RFPercentage(30), backgroundColor: Colors.white, justifyContent: 'center', alignItems: 'center' }} >
                         <Ionicons name="chevron-back" style={{ fontSize: RFPercentage(3) }} color={Colors.black} />
                     </TouchableOpacity>
-                    <Text style={{ color: Colors.primary, fontSize: RFPercentage(3.5), fontFamily: 'Montserrat_700Bold' }} >
-                        Progress
-                    </Text>
                 </View>
+                <Text style={{ marginTop: RFPercentage(1), color: Colors.primary, fontSize: RFPercentage(3.5), fontFamily: 'Montserrat_700Bold' }} >
+                    Progress
+                </Text>
 
                 {/* First List */}
-                <View style={{ marginLeft: RFPercentage(2.8), flexDirection: 'row', marginTop: RFPercentage(5), width: '30%', justifyContent: 'space-between', alignItems: 'center', alignSelf: 'flex-start' }} >
+                <View style={{ marginLeft: RFPercentage(2.8), flexDirection: 'row', marginTop: RFPercentage(5), width: '90%', justifyContent: 'flex-start', alignItems: 'center', alignSelf: 'flex-start' }} >
                     <TouchableOpacity activeOpacity={0.8} onPress={() => setActiveButton('1')} style={{ justifyContent: 'center', alignItems: 'center' }}  >
-                        <Text style={{ color: Colors.primary, fontSize: RFPercentage(2), fontFamily: 'Montserrat_600SemiBold' }} >
+                        <Text style={{ color: Colors.primary, fontSize: RFPercentage(1.9), fontFamily: 'Montserrat_600SemiBold' }} >
                             Weight
                         </Text>
                         {activeButton == '1' ?
@@ -43,8 +44,8 @@ function ProgressScreen(props) {
                         }
                     </TouchableOpacity>
 
-                    <TouchableOpacity activeOpacity={0.8} onPress={() => setActiveButton('2')} style={{ justifyContent: 'center', alignItems: 'center' }}  >
-                        <Text style={{ color: Colors.primary, fontSize: RFPercentage(2), fontFamily: 'Montserrat_600SemiBold' }} >
+                    <TouchableOpacity activeOpacity={0.8} onPress={() => setActiveButton('2')} style={{ marginLeft: RFPercentage(6), justifyContent: 'center', alignItems: 'center' }}  >
+                        <Text style={{ color: Colors.primary, fontSize: RFPercentage(1.9), fontFamily: 'Montserrat_600SemiBold' }} >
                             Mood
                         </Text>
                         {activeButton == '2' ?
@@ -58,9 +59,9 @@ function ProgressScreen(props) {
                 {/* Recipes List */}
                 {activeButton == '1' ?
 
-                    <View style={{ flexDirection: 'row', marginTop: RFPercentage(3.5), width: '90%', justifyContent: 'space-between', alignItems: 'center', alignSelf: 'center' }} >
+                    <View style={{ flexDirection: 'row', marginTop: RFPercentage(3.5), width: '100%', justifyContent: 'space-evenly', alignItems: 'center' }} >
                         <TouchableOpacity activeOpacity={0.8} onPress={() => setRecipesButton('1')} style={{ justifyContent: 'center', alignItems: 'center' }}  >
-                            <Text style={{ color: Colors.primary, fontSize: RFPercentage(2), fontFamily: 'Montserrat_600SemiBold' }} >
+                            <Text style={{ color: Colors.primary, fontSize: RFPercentage(1.8), fontFamily: 'Montserrat_600SemiBold' }} >
                                 April
                             </Text>
                             {recipesButton == '1' ?
@@ -71,7 +72,7 @@ function ProgressScreen(props) {
                         </TouchableOpacity>
 
                         <TouchableOpacity activeOpacity={0.8} onPress={() => setRecipesButton('2')} style={{ justifyContent: 'center', alignItems: 'center' }}  >
-                            <Text style={{ color: Colors.primary, fontSize: RFPercentage(2), fontFamily: 'Montserrat_600SemiBold' }} >
+                            <Text style={{ color: Colors.primary, fontSize: RFPercentage(1.8), fontFamily: 'Montserrat_600SemiBold' }} >
                                 3 Months
                             </Text>
                             {recipesButton == '2' ?
@@ -82,7 +83,7 @@ function ProgressScreen(props) {
                         </TouchableOpacity>
 
                         <TouchableOpacity activeOpacity={0.8} onPress={() => setRecipesButton('3')} style={{ justifyContent: 'center', alignItems: 'center' }}  >
-                            <Text style={{ color: Colors.primary, fontSize: RFPercentage(2), fontFamily: 'Montserrat_600SemiBold' }} >
+                            <Text style={{ color: Colors.primary, fontSize: RFPercentage(1.8), fontFamily: 'Montserrat_600SemiBold' }} >
                                 6 Months
                             </Text>
                             {recipesButton == '3' ?
@@ -93,7 +94,7 @@ function ProgressScreen(props) {
                         </TouchableOpacity>
 
                         <TouchableOpacity activeOpacity={0.8} onPress={() => setRecipesButton('4')} style={{ justifyContent: 'center', alignItems: 'center' }}  >
-                            <Text style={{ color: Colors.primary, fontSize: RFPercentage(2), fontFamily: 'Montserrat_600SemiBold' }} >
+                            <Text style={{ color: Colors.primary, fontSize: RFPercentage(1.8), fontFamily: 'Montserrat_600SemiBold' }} >
                                 Year
                             </Text>
                             {recipesButton == '4' ?
@@ -104,7 +105,7 @@ function ProgressScreen(props) {
                         </TouchableOpacity>
 
                         <TouchableOpacity activeOpacity={0.8} onPress={() => setRecipesButton('5')} style={{ justifyContent: 'center', alignItems: 'center' }}  >
-                            <Text style={{ color: Colors.primary, fontSize: RFPercentage(2), fontFamily: 'Montserrat_600SemiBold' }} >
+                            <Text style={{ color: Colors.primary, fontSize: RFPercentage(1.8), fontFamily: 'Montserrat_600SemiBold' }} >
                                 From Beginning
                             </Text>
                             {recipesButton == '5' ?
@@ -134,14 +135,14 @@ function ProgressScreen(props) {
                                     </Text>
                                 </View>
 
-                                <View style={{ marginTop: RFPercentage(3), flexDirection: 'row', width: '86%', justifyContent: 'flex-start', alignItems: 'center', alignSelf: 'center' }} >
-                                    <TouchableOpacity activeOpacity={0.8} style={{ width: RFPercentage(20), height: RFPercentage(5.5), borderRadius: RFPercentage(10), backgroundColor: Colors.white, justifyContent: 'center', alignItems: 'center' }} >
-                                        <Text style={{ color: Colors.primary, fontSize: RFPercentage(2), fontFamily: 'Montserrat_500Medium' }} >
+                                <View style={{ marginTop: RFPercentage(3), flexDirection: 'row', width: '94%', justifyContent: 'flex-start', alignItems: 'center', alignSelf: 'center' }} >
+                                    <TouchableOpacity activeOpacity={0.8} onPress={() => props.navigation.navigate("AddWeightScreen")} style={{ width: RFPercentage(20), height: RFPercentage(5.5), borderRadius: RFPercentage(10), backgroundColor: Colors.white, justifyContent: 'center', alignItems: 'center' }} >
+                                        <Text style={{ color: Colors.primary, fontSize: RFPercentage(1.9), fontFamily: 'Montserrat_500Medium' }} >
                                             Add Entry
                                         </Text>
                                     </TouchableOpacity>
                                     <TouchableOpacity activeOpacity={0.8} style={{ position: 'absolute', right: 0, width: RFPercentage(24), height: RFPercentage(5.5), borderRadius: RFPercentage(10), backgroundColor: Colors.white, justifyContent: 'center', alignItems: 'center' }} >
-                                        <Text style={{ color: Colors.primary, fontSize: RFPercentage(2), fontFamily: 'Montserrat_500Medium' }} >
+                                        <Text style={{ color: Colors.primary, fontSize: RFPercentage(1.9), fontFamily: 'Montserrat_500Medium' }} >
                                             View Photo Gallery
                                         </Text>
                                     </TouchableOpacity>
@@ -249,7 +250,7 @@ function ProgressScreen(props) {
                             </View>
 
                             <View style={{ marginTop: RFPercentage(3), flexDirection: 'row', width: '86%', justifyContent: 'flex-start', alignItems: 'center', alignSelf: 'center' }} >
-                                <TouchableOpacity activeOpacity={0.8} style={{ width: RFPercentage(20), height: RFPercentage(5.5), borderRadius: RFPercentage(10), backgroundColor: Colors.white, justifyContent: 'center', alignItems: 'center' }} >
+                                <TouchableOpacity onPress={() => props.navigation.navigate("AddWeightScreen")} activeOpacity={0.8} style={{ width: RFPercentage(20), height: RFPercentage(5.5), borderRadius: RFPercentage(10), backgroundColor: Colors.white, justifyContent: 'center', alignItems: 'center' }} >
                                     <Text style={{ color: Colors.primary, fontSize: RFPercentage(2), fontFamily: 'Montserrat_500Medium' }} >
                                         Add Entry
                                     </Text>

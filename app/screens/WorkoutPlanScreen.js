@@ -8,7 +8,6 @@ import { AntDesign } from '@expo/vector-icons';
 import Screen from './../components/Screen';
 import InputField from './../components/common/InputField';
 import MyAppButton from './../components/common/MyAppButton';
-import MealConfigScreenCart from '../components/MealConfigScreenCart';
 import BottomTab from '../components/common/BottomTab';
 import WorkoutConfiguratorScreenCart from './../components/WorkoutConfiguratorScreenCart';
 
@@ -126,7 +125,7 @@ function WorkoutPlanScreen(props) {
                 {/* First List */}
                 <View style={{ flexDirection: 'row', marginTop: RFPercentage(5), width: '90%', justifyContent: 'flex-start', alignItems: 'center', alignSelf: 'center' }} >
                     <TouchableOpacity activeOpacity={0.8} onPress={() => setActiveButton('1')} style={{ justifyContent: 'center', alignItems: 'center' }}  >
-                        <Text style={{ color: Colors.primary, fontSize: RFPercentage(2), fontFamily: 'Montserrat_600SemiBold' }} >
+                        <Text style={{ color: Colors.primary, fontSize: RFPercentage(1.9), fontFamily: 'Montserrat_600SemiBold' }} >
                             Exercises
                         </Text>
                         {activeButton == '1' ?
@@ -137,11 +136,11 @@ function WorkoutPlanScreen(props) {
                     </TouchableOpacity>
 
                     <TouchableOpacity activeOpacity={0.8} onPress={() => setActiveButton('2')} style={{ justifyContent: 'center', alignItems: 'center' }}  >
-                        <Text style={{ marginLeft: RFPercentage(8), color: Colors.primary, fontSize: RFPercentage(2), fontFamily: 'Montserrat_600SemiBold' }} >
+                        <Text style={{ marginLeft: RFPercentage(10), color: Colors.primary, fontSize: RFPercentage(1.9), fontFamily: 'Montserrat_600SemiBold' }} >
                             Workout Configurator
                         </Text>
                         {activeButton == '2' ?
-                            <View style={{ width: RFPercentage(22), height: RFPercentage(0.7), borderRadius: RFPercentage(0.5), backgroundColor: Colors.secondary }} />
+                            <View style={{ marginLeft: RFPercentage(10), width: RFPercentage(22), height: RFPercentage(0.7), borderRadius: RFPercentage(0.5), backgroundColor: Colors.secondary }} />
                             :
                             null
                         }
@@ -152,9 +151,9 @@ function WorkoutPlanScreen(props) {
                 {/* Recipes List */}
                 {activeButton == '1' ?
 
-                    <View style={{ flexDirection: 'row', marginTop: RFPercentage(3.5), width: '80%', justifyContent: 'space-between', alignItems: 'center', alignSelf: 'center' }} >
+                    <View style={{ flexDirection: 'row', marginTop: RFPercentage(3.5), width: '90%', justifyContent: 'space-between', alignItems: 'center', alignSelf: 'center' }} >
                         <TouchableOpacity activeOpacity={0.8} onPress={() => setRecipesButton('1')} style={{ justifyContent: 'center', alignItems: 'center' }}  >
-                            <Text style={{ color: Colors.primary, fontSize: RFPercentage(2), fontFamily: 'Montserrat_600SemiBold' }} >
+                            <Text style={{ color: Colors.primary, fontSize: RFPercentage(1.9), fontFamily: 'Montserrat_600SemiBold' }} >
                                 Body Workout
                             </Text>
                             {recipesButton == '1' ?
@@ -165,7 +164,7 @@ function WorkoutPlanScreen(props) {
                         </TouchableOpacity>
 
                         <TouchableOpacity activeOpacity={0.8} onPress={() => setRecipesButton('2')} style={{ justifyContent: 'center', alignItems: 'center' }}  >
-                            <Text style={{ color: Colors.primary, fontSize: RFPercentage(2), fontFamily: 'Montserrat_600SemiBold' }} >
+                            <Text style={{ color: Colors.primary, fontSize: RFPercentage(1.9), fontFamily: 'Montserrat_600SemiBold' }} >
                                 Sports
                             </Text>
                             {recipesButton == '2' ?
@@ -176,7 +175,7 @@ function WorkoutPlanScreen(props) {
                         </TouchableOpacity>
 
                         <TouchableOpacity activeOpacity={0.8} onPress={() => setRecipesButton('3')} style={{ justifyContent: 'center', alignItems: 'center' }}  >
-                            <Text style={{ color: Colors.primary, fontSize: RFPercentage(2), fontFamily: 'Montserrat_600SemiBold' }} >
+                            <Text style={{ color: Colors.primary, fontSize: RFPercentage(1.9), fontFamily: 'Montserrat_600SemiBold' }} >
                                 Created by me
                             </Text>
                             {recipesButton == '3' ?
@@ -236,7 +235,7 @@ function WorkoutPlanScreen(props) {
                                             <ImageBackground style={{ overflow: 'hidden', width: RFPercentage(22), height: RFPercentage(28), borderRadius: RFPercentage(3) }} source={item.imageSource} >
                                                 {/* Heart and Plus Icon */}
                                                 <View style={{ marginTop: RFPercentage(2), width: '96%', justifyContent: 'flex-end', alignItems: 'center', flexDirection: 'row' }} >
-                                                    <TouchableOpacity activeOpacity={0.8} style={{ marginLeft: RFPercentage(1.5) }} >
+                                                    <TouchableOpacity activeOpacity={0.8} onPress={() => props.navigation.navigate("AddExcersiseScreen")} style={{ marginLeft: RFPercentage(1.5) }} >
                                                         <AntDesign name="pluscircleo" style={{ fontSize: RFPercentage(3.5) }} color={Colors.primary} />
                                                     </TouchableOpacity>
                                                 </View>
@@ -275,15 +274,15 @@ function WorkoutPlanScreen(props) {
                         <View style={{ width: "100%", alignItems: "center", marginTop: RFPercentage(5) }}>
                             <MyAppButton
                                 title="Create Workout Plan"
-                                onPress={() => props.navigation.navigate("PersonalizedMealPlanScreen")}
+                                onPress={() => props.navigation.navigate("PersonalizedWorkoutPlanScreen")}
                                 gradient={true}
                                 bold={false}
                                 borderColor={Colors.primary}
                                 color={Colors.white}
                                 fontFamily={"Montserrat_600SemiBold"}
-                                fontSize={RFPercentage(2.2)}
+                                fontSize={RFPercentage(2)}
                                 borderRadius={RFPercentage(30)}
-                                width={"72%"}
+                                width={"80%"}
                             />
                         </View>
 
