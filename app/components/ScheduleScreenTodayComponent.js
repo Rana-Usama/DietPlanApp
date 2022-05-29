@@ -5,9 +5,6 @@ import { Ionicons } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 
-//components
-import Screen from './../components/Screen';
-
 //config
 import Colors from '../config/Colors';
 
@@ -19,16 +16,16 @@ function ScheduleScreenTodayComponent({ time, Title, subTitle }) {
         <View style={{ marginTop: RFPercentage(2), alignSelf: 'center', width: '90%', height: RFPercentage(14), backgroundColor: cartColor ? Colors.secondary : Colors.white, borderRadius: RFPercentage(3), justifyContent: 'center', alignItems: 'center' }} >
             <View style={{ position: 'absolute', left: RFPercentage(2) }} >
                 <Ionicons name="time-outline" style={{ fontSize: RFPercentage(2.6) }} color={Colors.primary} />
-                <Text style={{ marginTop: RFPercentage(1), color: Colors.primary, fontSize: RFPercentage(1.9), fontFamily: 'Montserrat_400Regular' }} >
+                <Text style={{ marginTop: RFPercentage(1), color: Colors.primary, fontSize: RFPercentage(1.7), fontFamily: 'Montserrat_400Regular' }} >
                     {time}
                 </Text>
             </View>
 
-            <View style={{ justifyContent: 'center', alignItems: 'flex-start' }} >
+            <View style={{ justifyContent: 'center', alignItems: 'flex-start', marginLeft: RFPercentage(3) }} >
                 <Text style={{ color: Colors.primary, fontSize: RFPercentage(2.4), fontFamily: 'Montserrat_600SemiBold' }} >
                     {Title}
                 </Text>
-                <Text style={{ marginTop: RFPercentage(1), color: Colors.primary, fontSize: RFPercentage(1.9), fontFamily: 'Montserrat_400Regular' }} >
+                <Text style={{ marginTop: RFPercentage(1), color: Colors.primary, fontSize: RFPercentage(1.7), fontFamily: 'Montserrat_400Regular' }} >
                     {subTitle}
                 </Text>
             </View>

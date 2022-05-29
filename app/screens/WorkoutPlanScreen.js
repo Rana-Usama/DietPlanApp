@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, ScrollView, StyleSheet, ImageBackground, FlatList, Switch, Image } from 'react-native'
+import { View, Text, TouchableOpacity, ScrollView, StyleSheet, ImageBackground, FlatList } from 'react-native';
 import { RFPercentage } from 'react-native-responsive-fontsize';
 import { Ionicons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
@@ -16,13 +16,9 @@ import Colors from '../config/Colors';
 
 function WorkoutPlanScreen(props) {
 
-    const [activeButton, setActiveButton] = useState('0');
+    const [activeButton, setActiveButton] = useState('1');
 
-    const [recipesButton, setRecipesButton] = useState('0');
-
-    const [glGiButton, setGlGiButton] = useState('1');
-
-    const [heart, setHeart] = useState(false);
+    const [recipesButton, setRecipesButton] = useState('1');
 
     const mealPlanConfigurationData = [
         {

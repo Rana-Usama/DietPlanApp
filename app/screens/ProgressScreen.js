@@ -10,13 +10,12 @@ import BottomTab from '../components/common/BottomTab';
 
 //config
 import Colors from '../config/Colors';
-import AddWeightScreen from './AddWeightScreen';
 
 function ProgressScreen(props) {
 
-    const [activeButton, setActiveButton] = useState('0');
+    const [activeButton, setActiveButton] = useState('1');
 
-    const [recipesButton, setRecipesButton] = useState('0');
+    const [recipesButton, setRecipesButton] = useState('2');
 
     return (
         <Screen style={styles.screen}>
@@ -135,15 +134,10 @@ function ProgressScreen(props) {
                                     </Text>
                                 </View>
 
-                                <View style={{ marginTop: RFPercentage(3), flexDirection: 'row', width: '94%', justifyContent: 'flex-start', alignItems: 'center', alignSelf: 'center' }} >
-                                    <TouchableOpacity activeOpacity={0.8} onPress={() => props.navigation.navigate("AddWeightScreen")} style={{ width: RFPercentage(20), height: RFPercentage(5.5), borderRadius: RFPercentage(10), backgroundColor: Colors.white, justifyContent: 'center', alignItems: 'center' }} >
-                                        <Text style={{ color: Colors.primary, fontSize: RFPercentage(1.9), fontFamily: 'Montserrat_500Medium' }} >
+                                <View style={{ marginTop: RFPercentage(3), flexDirection: 'row', width: '94%', justifyContent: 'center', alignItems: 'center', alignSelf: 'center' }} >
+                                    <TouchableOpacity activeOpacity={0.8} onPress={() => props.navigation.navigate("AddWeightScreen")} style={{ width: RFPercentage(18), height: RFPercentage(5.4), borderRadius: RFPercentage(10), backgroundColor: Colors.white, justifyContent: 'center', alignItems: 'center' }} >
+                                        <Text style={{ color: Colors.primary, fontSize: RFPercentage(1.8), fontFamily: 'Montserrat_500Medium' }} >
                                             Add Entry
-                                        </Text>
-                                    </TouchableOpacity>
-                                    <TouchableOpacity activeOpacity={0.8} style={{ position: 'absolute', right: 0, width: RFPercentage(24), height: RFPercentage(5.5), borderRadius: RFPercentage(10), backgroundColor: Colors.white, justifyContent: 'center', alignItems: 'center' }} >
-                                        <Text style={{ color: Colors.primary, fontSize: RFPercentage(1.9), fontFamily: 'Montserrat_500Medium' }} >
-                                            View Photo Gallery
                                         </Text>
                                     </TouchableOpacity>
                                 </View>
@@ -152,7 +146,7 @@ function ProgressScreen(props) {
                                     <ScrollView style={{ flex: 1, width: '100%' }} >
 
                                         <View style={{ marginTop: RFPercentage(3), width: '90%', justifyContent: 'flex-start', alignItems: 'center', alignSelf: 'center', flexDirection: 'row' }} >
-                                            <Text style={{ color: Colors.primary, fontSize: RFPercentage(2.4), fontFamily: 'Montserrat_600SemiBold' }} >
+                                            <Text style={{ color: Colors.primary, fontSize: RFPercentage(2.3), fontFamily: 'Montserrat_600SemiBold' }} >
                                                 Entries
                                             </Text>
                                         </View>
@@ -161,10 +155,10 @@ function ProgressScreen(props) {
                                         <View style={{ marginTop: RFPercentage(3), width: '90%', justifyContent: 'flex-start', alignItems: 'center', alignSelf: 'center', flexDirection: 'row' }} >
                                             <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }} >
                                                 <TouchableOpacity activeOpacity={0.8} >
-                                                    <Feather name="minus-circle" style={{ fontSize: RFPercentage(3.6) }} color={Colors.purple} />
+                                                    <Feather name="minus-circle" style={{ fontSize: RFPercentage(3.4) }} color={Colors.purple} />
                                                 </TouchableOpacity>
                                                 <View style={{ marginLeft: RFPercentage(1) }} >
-                                                    <Text style={{ color: Colors.primary, fontSize: RFPercentage(2.7), fontFamily: 'Montserrat_500Medium' }} >
+                                                    <Text style={{ color: Colors.primary, fontSize: RFPercentage(2.5), fontFamily: 'Montserrat_500Medium' }} >
                                                         55 Kg
                                                     </Text>
                                                     <Text style={{ color: Colors.primary, fontSize: RFPercentage(1.8), fontFamily: 'Montserrat_400Regular' }} >
@@ -183,10 +177,10 @@ function ProgressScreen(props) {
                                         <View style={{ marginTop: RFPercentage(3), width: '90%', justifyContent: 'flex-start', alignItems: 'center', alignSelf: 'center', flexDirection: 'row' }} >
                                             <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }} >
                                                 <TouchableOpacity activeOpacity={0.8} >
-                                                    <Feather name="minus-circle" style={{ fontSize: RFPercentage(3.6) }} color={Colors.purple} />
+                                                    <Feather name="minus-circle" style={{ fontSize: RFPercentage(3.4) }} color={Colors.purple} />
                                                 </TouchableOpacity>
                                                 <View style={{ marginLeft: RFPercentage(1) }} >
-                                                    <Text style={{ color: Colors.primary, fontSize: RFPercentage(2.7), fontFamily: 'Montserrat_500Medium' }} >
+                                                    <Text style={{ color: Colors.primary, fontSize: RFPercentage(2.5), fontFamily: 'Montserrat_500Medium' }} >
                                                         55 Kg
                                                     </Text>
                                                     <Text style={{ color: Colors.primary, fontSize: RFPercentage(1.8), fontFamily: 'Montserrat_400Regular' }} >
@@ -205,10 +199,32 @@ function ProgressScreen(props) {
                                         <View style={{ marginTop: RFPercentage(3), width: '90%', justifyContent: 'flex-start', alignItems: 'center', alignSelf: 'center', flexDirection: 'row' }} >
                                             <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }} >
                                                 <TouchableOpacity activeOpacity={0.8} >
-                                                    <Feather name="minus-circle" style={{ fontSize: RFPercentage(3.6) }} color={Colors.purple} />
+                                                    <Feather name="minus-circle" style={{ fontSize: RFPercentage(3.4) }} color={Colors.purple} />
                                                 </TouchableOpacity>
                                                 <View style={{ marginLeft: RFPercentage(1) }} >
-                                                    <Text style={{ color: Colors.primary, fontSize: RFPercentage(2.7), fontFamily: 'Montserrat_500Medium' }} >
+                                                    <Text style={{ color: Colors.primary, fontSize: RFPercentage(2.5), fontFamily: 'Montserrat_500Medium' }} >
+                                                        55 Kg
+                                                    </Text>
+                                                    <Text style={{ color: Colors.primary, fontSize: RFPercentage(1.8), fontFamily: 'Montserrat_400Regular' }} >
+                                                        Monday 22 April, 2022
+                                                    </Text>
+                                                </View>
+                                            </View>
+                                            <TouchableOpacity activeOpacity={0.8} style={{ position: 'absolute', right: 0, width: RFPercentage(10), height: RFPercentage(4), backgroundColor: Colors.grey, borderRadius: RFPercentage(20), justifyContent: 'center', alignItems: 'center' }} >
+                                                <Text style={{ color: Colors.primary, fontSize: RFPercentage(2) }} >
+                                                    Photo
+                                                </Text>
+                                            </TouchableOpacity>
+                                        </View>
+                                        <View style={{ marginTop: RFPercentage(4), width: '100%', backgroundColor: Colors.grey, height: RFPercentage(0.1) }} />
+
+                                        <View style={{ marginTop: RFPercentage(3), width: '90%', justifyContent: 'flex-start', alignItems: 'center', alignSelf: 'center', flexDirection: 'row' }} >
+                                            <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }} >
+                                                <TouchableOpacity activeOpacity={0.8} >
+                                                    <Feather name="minus-circle" style={{ fontSize: RFPercentage(3.4) }} color={Colors.purple} />
+                                                </TouchableOpacity>
+                                                <View style={{ marginLeft: RFPercentage(1) }} >
+                                                    <Text style={{ color: Colors.primary, fontSize: RFPercentage(2.5), fontFamily: 'Montserrat_500Medium' }} >
                                                         55 Kg
                                                     </Text>
                                                     <Text style={{ color: Colors.primary, fontSize: RFPercentage(1.8), fontFamily: 'Montserrat_400Regular' }} >
@@ -249,15 +265,10 @@ function ProgressScreen(props) {
                                 </Text>
                             </View>
 
-                            <View style={{ marginTop: RFPercentage(3), flexDirection: 'row', width: '86%', justifyContent: 'flex-start', alignItems: 'center', alignSelf: 'center' }} >
-                                <TouchableOpacity onPress={() => props.navigation.navigate("AddWeightScreen")} activeOpacity={0.8} style={{ width: RFPercentage(20), height: RFPercentage(5.5), borderRadius: RFPercentage(10), backgroundColor: Colors.white, justifyContent: 'center', alignItems: 'center' }} >
-                                    <Text style={{ color: Colors.primary, fontSize: RFPercentage(2), fontFamily: 'Montserrat_500Medium' }} >
+                            <View style={{ marginTop: RFPercentage(3), flexDirection: 'row', width: '94%', justifyContent: 'center', alignItems: 'center', alignSelf: 'center' }} >
+                                <TouchableOpacity activeOpacity={0.8} onPress={() => props.navigation.navigate("AddWeightScreen")} style={{ width: RFPercentage(18), height: RFPercentage(5.4), borderRadius: RFPercentage(10), backgroundColor: Colors.white, justifyContent: 'center', alignItems: 'center' }} >
+                                    <Text style={{ color: Colors.primary, fontSize: RFPercentage(1.8), fontFamily: 'Montserrat_500Medium' }} >
                                         Add Entry
-                                    </Text>
-                                </TouchableOpacity>
-                                <TouchableOpacity activeOpacity={0.8} style={{ position: 'absolute', right: 0, width: RFPercentage(24), height: RFPercentage(5.5), borderRadius: RFPercentage(10), backgroundColor: Colors.white, justifyContent: 'center', alignItems: 'center' }} >
-                                    <Text style={{ color: Colors.primary, fontSize: RFPercentage(2), fontFamily: 'Montserrat_500Medium' }} >
-                                        View Photo Gallery
                                     </Text>
                                 </TouchableOpacity>
                             </View>
@@ -266,7 +277,7 @@ function ProgressScreen(props) {
                                 <ScrollView style={{ flex: 1, width: '100%' }} >
 
                                     <View style={{ marginTop: RFPercentage(3), width: '90%', justifyContent: 'flex-start', alignItems: 'center', alignSelf: 'center', flexDirection: 'row' }} >
-                                        <Text style={{ color: Colors.primary, fontSize: RFPercentage(2.4), fontFamily: 'Montserrat_600SemiBold' }} >
+                                        <Text style={{ color: Colors.primary, fontSize: RFPercentage(2.2), fontFamily: 'Montserrat_600SemiBold' }} >
                                             Entries
                                         </Text>
                                     </View>
@@ -275,10 +286,10 @@ function ProgressScreen(props) {
                                     <View style={{ marginTop: RFPercentage(3), width: '90%', justifyContent: 'flex-start', alignItems: 'center', alignSelf: 'center', flexDirection: 'row' }} >
                                         <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }} >
                                             <TouchableOpacity activeOpacity={0.8} >
-                                                <Feather name="minus-circle" style={{ fontSize: RFPercentage(3.6) }} color={Colors.purple} />
+                                                <Feather name="minus-circle" style={{ fontSize: RFPercentage(3.4) }} color={Colors.purple} />
                                             </TouchableOpacity>
                                             <View style={{ marginLeft: RFPercentage(1) }} >
-                                                <Text style={{ color: Colors.primary, fontSize: RFPercentage(2.7), fontFamily: 'Montserrat_500Medium' }} >
+                                                <Text style={{ color: Colors.primary, fontSize: RFPercentage(2.5), fontFamily: 'Montserrat_500Medium' }} >
                                                     Happy
                                                 </Text>
                                                 <Text style={{ color: Colors.primary, fontSize: RFPercentage(1.8), fontFamily: 'Montserrat_400Regular' }} >
@@ -297,10 +308,10 @@ function ProgressScreen(props) {
                                     <View style={{ marginTop: RFPercentage(3), width: '90%', justifyContent: 'flex-start', alignItems: 'center', alignSelf: 'center', flexDirection: 'row' }} >
                                         <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }} >
                                             <TouchableOpacity activeOpacity={0.8} >
-                                                <Feather name="minus-circle" style={{ fontSize: RFPercentage(3.6) }} color={Colors.purple} />
+                                                <Feather name="minus-circle" style={{ fontSize: RFPercentage(3.4) }} color={Colors.purple} />
                                             </TouchableOpacity>
                                             <View style={{ marginLeft: RFPercentage(1) }} >
-                                                <Text style={{ color: Colors.primary, fontSize: RFPercentage(2.7), fontFamily: 'Montserrat_500Medium' }} >
+                                                <Text style={{ color: Colors.primary, fontSize: RFPercentage(2.5), fontFamily: 'Montserrat_500Medium' }} >
                                                     Sad
                                                 </Text>
                                                 <Text style={{ color: Colors.primary, fontSize: RFPercentage(1.8), fontFamily: 'Montserrat_400Regular' }} >

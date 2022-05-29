@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, ScrollView, Image, KeyboardAvoidingView, StyleSheet } from 'react-native'
+import { View, Text, TouchableOpacity, ScrollView, Image, StyleSheet } from 'react-native'
 import { RFPercentage } from 'react-native-responsive-fontsize';
 
 //components
 import Screen from './../components/Screen';
 import MyAppButton from './../components/common/MyAppButton';
 import LineInputField from './../components/common/LineInputField';
+import LoadingModal from './../components/common/LoadingModal';
 
 //config
 import Colors from '../config/Colors';
@@ -71,7 +72,7 @@ function LoginScreen(props) {
 
     return (
         <Screen style={styles.screen}>
-
+            <LoadingModal show={indicator} />
             <Text style={{ color: Colors.primary, fontSize: RFPercentage(4.8), fontFamily: 'Montserrat_700Bold', marginTop: RFPercentage(10) }} >
                 Welcome
             </Text>
@@ -123,7 +124,7 @@ function LoginScreen(props) {
                     </View>
 
                     {/* Forget Pass & or */}
-                    <TouchableOpacity activeOpacity={0.8} style={{ marginTop: RFPercentage(2) }} >
+                    <TouchableOpacity onPress={() => props.navigation.navigate("ForgetPasswordScreen")} activeOpacity={0.8} style={{ marginTop: RFPercentage(2) }} >
                         <Text style={{ color: Colors.black, fontSize: RFPercentage(1.9) }} >
                             Forget Password?
                         </Text>

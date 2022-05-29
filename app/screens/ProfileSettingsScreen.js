@@ -48,14 +48,14 @@ function ProfileSettingsScreen(props) {
                         <Ionicons name="chevron-back" style={{ fontSize: RFPercentage(3.4) }} color={Colors.black} />
                     </TouchableOpacity>
                 </View>
-                <Text style={{ color: Colors.primary, fontSize: RFPercentage(3.7), marginTop: RFPercentage(4), fontFamily: 'Montserrat_700Bold' }} >
+                <Text style={{ color: Colors.primary, fontSize: RFPercentage(3.5), marginTop: RFPercentage(4), fontFamily: 'Montserrat_700Bold' }} >
                     Profile Settings
                 </Text>
                 <View style={{ width: '90%', position: 'absolute', bottom: RFPercentage(4), left: RFPercentage(2), flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center' }} >
-                    <Text style={{ color: Colors.primary, fontSize: RFPercentage(1.9), fontFamily: 'Montserrat_600SemiBold' }} >
+                    <Text style={{ color: Colors.primary, fontSize: RFPercentage(1.7), fontFamily: 'Montserrat_600SemiBold' }} >
                         Username :
                     </Text>
-                    <Text style={{ marginLeft: RFPercentage(0.5), color: Colors.purple, fontSize: RFPercentage(1.9), fontFamily: 'Montserrat_600SemiBold' }} >
+                    <Text style={{ marginLeft: RFPercentage(0.5), color: Colors.purple, fontSize: RFPercentage(1.7), fontFamily: 'Montserrat_600SemiBold' }} >
                         abby.racbury@gmail.com
                     </Text>
                 </View>
@@ -65,7 +65,7 @@ function ProfileSettingsScreen(props) {
                 <View style={{ justifyContent: 'center', alignItems: 'center', width: '100%' }}>
                     {/* First Type */}
                     <View style={{ marginTop: RFPercentage(4), width: '90%', justifyContent: 'flex-end', alignItems: 'center', flexDirection: 'row' }} >
-                        <Text style={{ position: 'absolute', left: 0, color: Colors.primary, fontSize: RFPercentage(2), fontFamily: 'Montserrat_600SemiBold' }} >
+                        <Text style={{ position: 'absolute', left: 0, color: Colors.primary, fontSize: RFPercentage(1.9), fontFamily: 'Montserrat_600SemiBold' }} >
                             Auto Complete Meals
                         </Text>
                         <Switch
@@ -78,7 +78,7 @@ function ProfileSettingsScreen(props) {
                     </View>
 
                     <View style={{ marginTop: RFPercentage(3), width: '90%', justifyContent: 'flex-end', alignItems: 'center', flexDirection: 'row' }} >
-                        <Text style={{ position: 'absolute', left: 0, color: Colors.primary, fontSize: RFPercentage(2), fontFamily: 'Montserrat_600SemiBold' }} >
+                        <Text style={{ position: 'absolute', left: 0, color: Colors.primary, fontSize: RFPercentage(1.9), fontFamily: 'Montserrat_600SemiBold' }} >
                             Auto Complete Workout Routines
                         </Text>
                         <Switch
@@ -93,7 +93,7 @@ function ProfileSettingsScreen(props) {
                     {/* Second type */}
                     <View style={{ marginTop: RFPercentage(6), width: '90%', justifyContent: 'flex-start', alignItems: 'center', flexDirection: 'row' }} >
                         <View style={{ width: '30%', justifyContent: 'center', alignItems: 'flex-start' }} >
-                            <Text style={{ color: Colors.primary, fontSize: RFPercentage(2), fontFamily: 'Montserrat_600SemiBold' }} >
+                            <Text style={{ color: Colors.primary, fontSize: RFPercentage(1.9), fontFamily: 'Montserrat_600SemiBold' }} >
                                 Notification with
                             </Text>
                         </View>
@@ -112,7 +112,7 @@ function ProfileSettingsScreen(props) {
                             </View>
                         </View>
                         <View style={{ width: '30%', justifyContent: 'center', alignItems: 'flex-start', marginLeft: RFPercentage(1.2) }} >
-                            <Text style={{ color: Colors.primary, fontSize: RFPercentage(2), fontFamily: 'Montserrat_600SemiBold' }} >
+                            <Text style={{ color: Colors.primary, fontSize: RFPercentage(1.9), fontFamily: 'Montserrat_600SemiBold' }} >
                                 Before each meal
                             </Text>
                         </View>
@@ -127,7 +127,7 @@ function ProfileSettingsScreen(props) {
 
                     <View style={{ marginTop: RFPercentage(6), width: '90%', justifyContent: 'flex-start', alignItems: 'center', flexDirection: 'row' }} >
                         <View style={{ width: '30%', justifyContent: 'center', alignItems: 'flex-start' }} >
-                            <Text style={{ color: Colors.primary, fontSize: RFPercentage(2), fontFamily: 'Montserrat_600SemiBold' }} >
+                            <Text style={{ color: Colors.primary, fontSize: RFPercentage(1.9), fontFamily: 'Montserrat_600SemiBold' }} >
                                 Notification with
                             </Text>
                         </View>
@@ -146,7 +146,7 @@ function ProfileSettingsScreen(props) {
                             </View>
                         </View>
                         <View style={{ width: '30%', justifyContent: 'center', alignItems: 'flex-start', marginLeft: RFPercentage(1.2) }} >
-                            <Text style={{ color: Colors.primary, fontSize: RFPercentage(2), fontFamily: 'Montserrat_600SemiBold' }} >
+                            <Text style={{ color: Colors.primary, fontSize: RFPercentage(1.9), fontFamily: 'Montserrat_600SemiBold' }} >
                                 Before each workout
                             </Text>
                         </View>
@@ -161,7 +161,7 @@ function ProfileSettingsScreen(props) {
 
                     <View style={{ marginTop: RFPercentage(6), width: '90%', justifyContent: 'flex-start', alignItems: 'center', flexDirection: 'row' }} >
                         <View style={{ width: '30%', justifyContent: 'center', alignItems: 'flex-start' }} >
-                            <Text style={{ color: Colors.primary, fontSize: RFPercentage(2), fontFamily: 'Montserrat_600SemiBold' }} >
+                            <Text style={{ color: Colors.primary, fontSize: RFPercentage(1.9), fontFamily: 'Montserrat_600SemiBold' }} >
                                 Notification every
                             </Text>
                         </View>
@@ -180,7 +180,7 @@ function ProfileSettingsScreen(props) {
                             </View>
                         </View>
                         <View style={{ width: '30%', justifyContent: 'center', alignItems: 'flex-start', marginLeft: RFPercentage(1.2) }} >
-                            <Text style={{ color: Colors.primary, fontSize: RFPercentage(2), fontFamily: 'Montserrat_600SemiBold' }} >
+                            <Text style={{ color: Colors.primary, fontSize: RFPercentage(1.9), fontFamily: 'Montserrat_600SemiBold' }} >
                                 For drinking water
                             </Text>
                         </View>

@@ -21,6 +21,7 @@ import AddRecipesScreen from './app/screens/AddRecipesScreen';
 import AddWeightScreen from './app/screens/AddWeightScreen';
 import ProgressScreen from './app/screens/ProgressScreen';
 import ScheduleScreen from './app/screens/ScheduleScreen';
+import ForgetPasswordScreen from './app/screens/ForgetPasswordScreen';
 
 //config
 import Colors from './app/config/Colors';
@@ -58,6 +59,7 @@ export default function App() {
         <Stack.Screen name="AddWeightScreen" component={AddWeightScreen} />
         <Stack.Screen name="ProgressScreen" component={ProgressScreen} />
         <Stack.Screen name="ScheduleScreen" component={ScheduleScreen} />
+        <Stack.Screen name="ForgetPasswordScreen" component={ForgetPasswordScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

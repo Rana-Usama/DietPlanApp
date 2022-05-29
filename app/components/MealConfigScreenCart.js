@@ -23,7 +23,7 @@ function MealConfigScreenCart({ t1, t2, t3, date }) {
                 <Text style={{ fontFamily: 'Montserrat_500Medium', color: disable ? Colors.white : Colors.primary, fontSize: RFPercentage(2) }} >
                     {t1}
                 </Text>
-                <Text style={{ marginLeft: RFPercentage(7), fontFamily: 'Montserrat_500Medium', color: disable ? Colors.secondary : Colors.primary, fontSize: RFPercentage(1.7) }}  >
+                <Text style={{ marginLeft: RFPercentage(7), fontFamily: 'Montserrat_500Medium', color: disable ? Colors.secondary : Colors.primary, fontSize: RFPercentage(1.5) }}  >
                     {date}
                 </Text>
             </View>

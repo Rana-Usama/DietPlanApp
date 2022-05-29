@@ -3,6 +3,9 @@ import { View, Text, TouchableOpacity, ScrollView, StyleSheet, ImageBackground, 
 import { RFPercentage } from 'react-native-responsive-fontsize';
 import { Ionicons } from '@expo/vector-icons';
 import { TextInput } from 'react-native';
+import { AntDesign } from '@expo/vector-icons';
+import DateTimePicker from "react-native-modal-datetime-picker";
+import RNPickerSelect from 'react-native-picker-select';
 
 //components
 import Screen from './../components/Screen';
@@ -15,6 +18,13 @@ import Colors from '../config/Colors';
 
 function PersonalizedMealPlanScreen(props) {
 
+    const [isDateTimePickerVisible, setIsDateTimePickerVisible] = useState(false)
+    const [date, setDate] = useState(new Date())
+
+    const handleDatePicked = date => {
+        setDate(date)
+    };
+
     const [inputField, SetInputField] = useState([
         {
             placeholder: "Name",
@@ -22,8 +32,13 @@ function PersonalizedMealPlanScreen(props) {
             value: "",
         },
         {
-            placeholder: "11:00 AM",
+            placeholder: "11:00 PM",
             title: 'Meal Hour',
+            value: "",
+        },
+        {
+            placeholder: "1.5 L",
+            title: 'Water in Lt',
             value: "",
         },
     ]);
@@ -48,8 +63,24 @@ function PersonalizedMealPlanScreen(props) {
         SetInputField2(tempfeilds);
 
     };
+
+    const iconComponent = () => {
+        return <MaterialCommunityIcons
+            name={"chevron-down"}
+            size={20}
+            color={"grey"}
+        />
+    }
     return (
         <Screen style={{ flex: 1, justifyContent: 'flex-start', alignItems: "center", backgroundColor: Colors.newGrey }}>
+            <DateTimePicker
+                // textColor={Colors.primary}
+                isDarkModeEnabled={true}
+                isVisible={isDateTimePickerVisible}
+                onConfirm={(date) => handleDatePicked(date)}
+                onCancel={() => setIsDateTimePickerVisible(false)}
+                mode="date"
+            />
             {/* Nav */}
             <ImageBackground style={{ justifyContent: 'center', alignItems: 'center', width: '100%', height: RFPercentage(31.6) }} source={require('../../assets/images/top.png')} >
                 {/* <View style={{ marginTop: RFPercentage(8), width: '90%', justifyContent: 'center', alignItems: 'center', alignSelf: 'center' }} > */}
@@ -91,6 +122,23 @@ function PersonalizedMealPlanScreen(props) {
                                 />
                             </View>
                         ))}
+                    </View>
+
+                    <View style={{ marginTop: RFPercentage(3), width: '90%', justifyContent: 'flex-start', alignItems: 'center', flexDirection: 'row', alignSelf: 'center' }} >
+                        <Text style={{ marginRight: RFPercentage(4), color: Colors.primary, fontSize: RFPercentage(2), fontFamily: 'Montserrat_500Medium' }} >
+                            Meal Date
+                        </Text>
+
+                        <View style={{ marginLeft: RFPercentage(3), width: '60%', height: RFPercentage(6), backgroundColor: Colors.white, borderRadius: RFPercentage(20), justifyContent: 'center', alignItems: 'center' }} >
+                            <View style={{ flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', width: '90%' }} >
+                                <Text style={{ color: Colors.darkGrey, fontSize: RFPercentage(1.8) }} >
+                                    {date.toDateString()}
+                                </Text>
+                                <TouchableOpacity onPress={() => setIsDateTimePickerVisible(true)} style={{ position: 'absolute', right: 0 }} >
+                                    <AntDesign name="caretdown" style={{ fontSize: RFPercentage(2) }} color={Colors.darkGrey} />
+                                </TouchableOpacity>
+                            </View>
+                        </View>
                     </View>
 
                     <View style={{ right: RFPercentage(-3), flexDirection: 'row', marginTop: RFPercentage(3), width: '100%', justifyContent: 'flex-end', alignItems: 'center', alignSelf: 'center' }} >
@@ -233,7 +281,7 @@ function PersonalizedMealPlanScreen(props) {
             </ScrollView>
 
             <BottomTab props={props} />
-        </Screen>
+        </Screen >
     );
 }
 

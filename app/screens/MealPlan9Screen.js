@@ -17,9 +17,9 @@ import Colors from '../config/Colors';
 
 function MealPlanScreen(props) {
 
-    const [activeButton, setActiveButton] = useState('0');
+    const [activeButton, setActiveButton] = useState('1');
 
-    const [recipesButton, setRecipesButton] = useState('0');
+    const [recipesButton, setRecipesButton] = useState('1');
 
     const [glGiButton, setGlGiButton] = useState('1');
 
@@ -363,7 +363,7 @@ function MealPlanScreen(props) {
                                 {byMealCartData.map((item, i) => (
                                     <View key={i} style={{ width: '90%', justifyContent: 'center', alignItems: 'center', marginTop: i == 0 ? RFPercentage(3) : RFPercentage(2) }} >
                                         <View style={{ position: 'absolute', top: 0, left: RFPercentage(1.4) }} >
-                                            <Text style={{ color: Colors.primary, fontSize: RFPercentage(2.1), fontFamily: 'Montserrat_600SemiBold' }} >
+                                            <Text style={{ color: Colors.primary, fontSize: RFPercentage(2), fontFamily: 'Montserrat_600SemiBold' }} >
                                                 {item.title}
                                             </Text>
                                         </View>
@@ -371,11 +371,11 @@ function MealPlanScreen(props) {
                                             {/* empty view for background opacity */}
                                             <View style={{ borderBottomRightRadius: RFPercentage(2), borderBottomLeftRadius: RFPercentage(2), position: 'absolute', top: 0, right: 0, left: 0, bottom: 0, backgroundColor: "rgba(0,0,0,0.3)" }} />
                                             <View style={{ width: '90%', justifyContent: 'center', alignItems: 'flex-start', alignSelf: 'center' }} >
-                                                <Text style={{ color: Colors.white, fontSize: RFPercentage(2.4), fontFamily: 'Montserrat_500Medium' }} >
+                                                <Text style={{ color: Colors.white, fontSize: RFPercentage(2.2), fontFamily: 'Montserrat_500Medium' }} >
                                                     {item.imageTitle}
                                                 </Text>
                                                 <TouchableOpacity activeOpacity={0.8} style={{ position: 'absolute', right: 0 }} >
-                                                    <AntDesign name="pluscircleo" style={{ fontSize: RFPercentage(4) }} color={Colors.secondary} />
+                                                    <AntDesign name="pluscircleo" style={{ fontSize: RFPercentage(3.7) }} color={Colors.secondary} />
                                                 </TouchableOpacity>
                                             </View>
                                         </ImageBackground>

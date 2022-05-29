@@ -24,11 +24,9 @@ function ScheduleScreen(props) {
     };
 
 
-    const [activeButton, setActiveButton] = useState('0');
+    const [activeButton, setActiveButton] = useState('1');
 
     const [cartColor, setCartColor] = useState(false);
-
-    const [minus, setMinus] = useState(false);
 
     const [check, setCheck] = useState('0');
 
@@ -138,7 +136,7 @@ function ScheduleScreen(props) {
 
                             <View style={{ width: '90%', height: RFPercentage(14), backgroundColor: Colors.white, borderRadius: RFPercentage(3), justifyContent: 'flex-start', alignItems: 'center', alignSelf: 'center', flexDirection: 'row' }} >
                                 <View style={{ marginBottom: RFPercentage(2), marginLeft: RFPercentage(2), justifyContent: 'center', alignItems: 'center' }} >
-                                    <Text style={{ color: Colors.primary, fontSize: RFPercentage(2.8), fontFamily: 'Montserrat_600SemiBold' }} >
+                                    <Text style={{ color: Colors.primary, fontSize: RFPercentage(2.5), fontFamily: 'Montserrat_600SemiBold' }} >
                                         Water
                                     </Text>
                                     <Text style={{ marginTop: RFPercentage(1.4), color: Colors.primary, fontSize: RFPercentage(1.9), fontFamily: 'Montserrat_400Regular' }} >
@@ -146,32 +144,32 @@ function ScheduleScreen(props) {
                                     </Text>
                                 </View>
                                 <View style={{ flexDirection: 'row', position: 'absolute', right: RFPercentage(2), top: RFPercentage(2) }} >
-                                    <View style={{ width: RFPercentage(10), height: RFPercentage(4), backgroundColor: Colors.secondary, borderRadius: RFPercentage(2), justifyContent: 'center', alignItems: 'center' }} >
+                                    <TouchableOpacity activeOpacity={0.8} style={{ width: RFPercentage(10), height: RFPercentage(4), backgroundColor: Colors.secondary, borderRadius: RFPercentage(2), justifyContent: 'center', alignItems: 'center' }} >
                                         <Text style={{ color: Colors.primary, fontSize: RFPercentage(1.8), fontFamily: 'Montserrat_400Regular' }} >
                                             -250ml
                                         </Text>
-                                    </View>
-                                    <View style={{ marginLeft: RFPercentage(1.5), width: RFPercentage(10), height: RFPercentage(4), backgroundColor: Colors.primary, borderRadius: RFPercentage(2), justifyContent: 'center', alignItems: 'center' }} >
+                                    </TouchableOpacity>
+                                    <TouchableOpacity activeOpacity={0.8} style={{ marginLeft: RFPercentage(1.5), width: RFPercentage(10), height: RFPercentage(4), backgroundColor: Colors.primary, borderRadius: RFPercentage(2), justifyContent: 'center', alignItems: 'center' }} >
                                         <Text style={{ color: Colors.secondary, fontSize: RFPercentage(1.8), fontFamily: 'Montserrat_400Regular' }} >
                                             -250ml
                                         </Text>
-                                    </View>
+                                    </TouchableOpacity>
                                 </View>
                             </View>
 
                             <View style={{ marginTop: RFPercentage(2), alignSelf: 'center', width: '90%', height: RFPercentage(14), backgroundColor: cartColor ? Colors.secondary : Colors.white, borderRadius: RFPercentage(3), justifyContent: 'flex-start', alignItems: 'center', flexDirection: 'row' }} >
                                 <View style={{ marginLeft: RFPercentage(2) }} >
                                     <Ionicons name="time-outline" style={{ fontSize: RFPercentage(3) }} color={Colors.primary} />
-                                    <Text style={{ marginTop: RFPercentage(1), color: Colors.primary, fontSize: RFPercentage(1.9), fontFamily: 'Montserrat_400Regular' }} >
+                                    <Text style={{ marginTop: RFPercentage(1), color: Colors.primary, fontSize: RFPercentage(1.8), fontFamily: 'Montserrat_400Regular' }} >
                                         10:00 AM
                                     </Text>
                                 </View>
 
                                 <View style={{ marginLeft: RFPercentage(2), justifyContent: 'center', alignItems: 'flex-start' }} >
-                                    <Text style={{ color: Colors.primary, fontSize: RFPercentage(2.8), fontFamily: 'Montserrat_600SemiBold' }} >
+                                    <Text style={{ color: Colors.primary, fontSize: RFPercentage(2.5), fontFamily: 'Montserrat_600SemiBold' }} >
                                         Cardio
                                     </Text>
-                                    <Text style={{ marginTop: RFPercentage(1), color: Colors.primary, fontSize: RFPercentage(1.9), fontFamily: 'Montserrat_400Regular' }} >
+                                    <Text style={{ marginTop: RFPercentage(1), color: Colors.primary, fontSize: RFPercentage(1.8), fontFamily: 'Montserrat_400Regular' }} >
                                         25 Minutes
                                     </Text>
                                 </View>
@@ -203,7 +201,7 @@ function ScheduleScreen(props) {
                                             <TouchableOpacity activeOpacity={0.8} >
                                                 <Feather name="minus-circle" style={{ fontSize: RFPercentage(2.6) }} color={Colors.primary} />
                                             </TouchableOpacity>
-                                            <Text style={{ marginLeft: RFPercentage(2), color: Colors.primary, fontSize: RFPercentage(2.4), fontFamily: 'Montserrat_600SemiBold' }} >
+                                            <Text style={{ marginLeft: RFPercentage(2), color: Colors.primary, fontSize: RFPercentage(2.2), fontFamily: 'Montserrat_600SemiBold' }} >
                                                 Squats
                                             </Text>
                                             <TouchableOpacity activeOpacity={0.8} style={{ position: 'absolute', right: 0 }} >
@@ -216,7 +214,7 @@ function ScheduleScreen(props) {
                                             <TouchableOpacity activeOpacity={0.8} >
                                                 <Feather name="minus-circle" style={{ fontSize: RFPercentage(2.6) }} color={Colors.primary} />
                                             </TouchableOpacity>
-                                            <Text style={{ marginLeft: RFPercentage(2), color: Colors.primary, fontSize: RFPercentage(2.4), fontFamily: 'Montserrat_600SemiBold' }} >
+                                            <Text style={{ marginLeft: RFPercentage(2), color: Colors.primary, fontSize: RFPercentage(2.2), fontFamily: 'Montserrat_600SemiBold' }} >
                                                 Running
                                             </Text>
                                             <TouchableOpacity activeOpacity={0.8} style={{ position: 'absolute', right: 0 }} >
@@ -229,7 +227,7 @@ function ScheduleScreen(props) {
                                             <TouchableOpacity activeOpacity={0.8} >
                                                 <Feather name="minus-circle" style={{ fontSize: RFPercentage(2.6) }} color={Colors.primary} />
                                             </TouchableOpacity>
-                                            <Text style={{ marginLeft: RFPercentage(2), color: Colors.primary, fontSize: RFPercentage(2.4), fontFamily: 'Montserrat_600SemiBold' }} >
+                                            <Text style={{ marginLeft: RFPercentage(2), color: Colors.primary, fontSize: RFPercentage(2.2), fontFamily: 'Montserrat_600SemiBold' }} >
                                                 Jumping Jacks
                                             </Text>
                                             <TouchableOpacity activeOpacity={0.8} style={{ position: 'absolute', right: 0 }} >
