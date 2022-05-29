@@ -9,10 +9,10 @@ import DateTimePicker from "react-native-modal-datetime-picker";
 import Screen from './../components/Screen';
 import BottomTab from '../components/common/BottomTab';
 import InputField from './../components/common/InputField';
+import MyAppButton from './../components/common/MyAppButton';
 
 //config
 import Colors from '../config/Colors';
-import MyAppButton from './../components/common/MyAppButton';
 
 function AddWeightScreen(props) {
 

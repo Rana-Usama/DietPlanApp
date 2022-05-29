@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, ImageBackground, ScrollView } from 'react-native'
+import React, { useState, useEffect } from 'react';
+import { View, Text, TouchableOpacity, ImageBackground, ScrollView, Image } from 'react-native'
 import { RFPercentage } from 'react-native-responsive-fontsize';
 import { Ionicons } from '@expo/vector-icons';
 import RNPickerSelect from 'react-native-picker-select';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import * as ImagePicker from 'expo-image-picker';
 
 //components
 import Screen from './../components/Screen';
@@ -15,6 +16,36 @@ import Colors from '../config/Colors';
 import BottomTab from '../components/common/BottomTab';
 
 function AddRecipesScreen(props) {
+
+    const [image, setImage] = useState(null);
+
+    useEffect(() => {
+        (async () => {
+            if (Platform.OS !== 'web') {
+                const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
+                if (status !== 'granted') {
+                    alert('Sorry, we need camera roll permissions to make this work!');
+                }
+            }
+        })();
+    }, []);
+
+    const pickImage = async () => {
+
+        let result = await ImagePicker.launchImageLibraryAsync({
+            mediaTypes: ImagePicker.MediaTypeOptions.Images,
+            allowsEditing: true,
+            aspect: [4, 3],
+            quality: 1,
+        });
+
+        // console.log(result);
+
+        if (!result.cancelled) {
+            setImage(result.uri);
+        }
+    };
+
 
     const [inputField, SetInputField] = useState([
         {
@@ -98,15 +129,21 @@ function AddRecipesScreen(props) {
                     <View style={{ marginTop: RFPercentage(1), width: '85%', justifyContent: 'center', alignItems: 'center', borderBottomColor: Colors.grey, borderWidth: RFPercentage(0.1) }} />
 
                     <View style={{ marginTop: RFPercentage(6), width: '90%', justifyContent: 'flex-start', alignItems: 'center', flexDirection: 'row', alignSelf: 'center' }} >
-                        <TouchableOpacity activeOpacity={0.8} style={{ justifyContent: 'center', alignItems: 'center', width: RFPercentage(18), height: RFPercentage(5), borderRadius: RFPercentage(10), backgroundColor: Colors.white }} >
+                        <TouchableOpacity onPress={pickImage} activeOpacity={0.8} style={{ justifyContent: 'center', alignItems: 'center', width: RFPercentage(18), height: RFPercentage(5), borderRadius: RFPercentage(10), backgroundColor: Colors.white }} >
                             <Text style={{ color: Colors.primary, fontSize: RFPercentage(1.8), fontFamily: 'Montserrat_600SemiBold' }} >
                                 Add Recipe Photo
                             </Text>
                         </TouchableOpacity>
                     </View>
 
+
+                    <TouchableOpacity activeOpacity={0.6} style={{ alignSelf: 'center', marginTop: RFPercentage(3) }} >
+                        <Image source={{ uri: image }} style={{ width: RFPercentage(30), height: RFPercentage(20), borderRadius: RFPercentage(1) }} />
+                    </TouchableOpacity>
+
+
                     {/* Button */}
-                    <View style={{ width: "100%", alignItems: "center", marginTop: RFPercentage(6) }}>
+                    <View style={{ width: "100%", alignItems: "center", marginTop: RFPercentage(4) }}>
                         <MyAppButton
                             title="Add"
                             // onPress={() => handleLogin()}
