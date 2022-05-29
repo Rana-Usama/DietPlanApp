@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, TouchableOpacity, ImageBackground, ScrollView, Image } from 'react-native'
+import { View, Text, TouchableOpacity, ImageBackground, ScrollView, Image, Platform } from 'react-native'
 import { RFPercentage } from 'react-native-responsive-fontsize';
 import { Ionicons } from '@expo/vector-icons';
 import RNPickerSelect from 'react-native-picker-select';
@@ -119,7 +119,7 @@ function AddRecipesScreen(props) {
                         <RNPickerSelect
                             onValueChange={(value) => console.log(value)}
                             placeholder={{ label: 'Served as : Breakfast' }}
-                            Icon={iconComponent}
+                            Icon={Platform.OS == 'android' ? null : iconComponent}
                             items={[
                                 { label: '22 May 2022', value: 'may' },
                                 { label: '15 June 2022', value: 'june' },
