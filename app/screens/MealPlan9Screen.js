@@ -14,6 +14,7 @@ import BottomTab from './../components/common/BottomTab';
 
 //config
 import Colors from '../config/Colors';
+import AddFoodToMealPlanScreen from './AddFoodToMealPlanScreen';
 
 function MealPlanScreen(props) {
 
@@ -254,7 +255,7 @@ function MealPlanScreen(props) {
             {/* Nav */}
             <ImageBackground style={{ justifyContent: 'flex-start', alignItems: 'center', width: '100%', height: RFPercentage(32) }} source={require('../../assets/images/top.png')} >
                 <View style={{ marginTop: RFPercentage(6), width: '90%', justifyContent: 'center', alignItems: 'center', alignSelf: 'center' }} >
-                    <TouchableOpacity onPress={() => props.navigation.navigate("LoginScreen")} activeOpacity={0.8} style={{ position: 'absolute', left: 0, width: RFPercentage(5), height: RFPercentage(5), borderRadius: RFPercentage(30), backgroundColor: Colors.white, justifyContent: 'center', alignItems: 'center' }} >
+                    <TouchableOpacity activeOpacity={0.8} style={{ position: 'absolute', left: 0, width: RFPercentage(5), height: RFPercentage(5), borderRadius: RFPercentage(30), backgroundColor: Colors.white, justifyContent: 'center', alignItems: 'center' }} >
                         <Ionicons name="chevron-back" style={{ fontSize: RFPercentage(3) }} color={Colors.black} />
                     </TouchableOpacity>
                 </View>
@@ -326,10 +327,10 @@ function MealPlanScreen(props) {
 
                         <TouchableOpacity activeOpacity={0.8} onPress={() => setRecipesButton('3')} style={{ justifyContent: 'center', alignItems: 'center' }}  >
                             <Text style={{ color: Colors.primary, fontSize: RFPercentage(1.8), fontFamily: 'Montserrat_600SemiBold' }} >
-                                Foods Favourite
+                                Foods
                             </Text>
                             {recipesButton == '3' ?
-                                <View style={{ width: RFPercentage(16), height: RFPercentage(0.7), borderRadius: RFPercentage(0.5), backgroundColor: Colors.secondary }} />
+                                <View style={{ width: RFPercentage(6.5), height: RFPercentage(0.7), borderRadius: RFPercentage(0.5), backgroundColor: Colors.secondary }} />
                                 :
                                 null
                             }
@@ -337,9 +338,20 @@ function MealPlanScreen(props) {
 
                         <TouchableOpacity activeOpacity={0.8} onPress={() => setRecipesButton('4')} style={{ justifyContent: 'center', alignItems: 'center' }}  >
                             <Text style={{ color: Colors.primary, fontSize: RFPercentage(1.8), fontFamily: 'Montserrat_600SemiBold' }} >
-                                Created by me
+                                Favourite
                             </Text>
                             {recipesButton == '4' ?
+                                <View style={{ width: RFPercentage(9), height: RFPercentage(0.7), borderRadius: RFPercentage(0.5), backgroundColor: Colors.secondary }} />
+                                :
+                                null
+                            }
+                        </TouchableOpacity>
+
+                        <TouchableOpacity activeOpacity={0.8} onPress={() => setRecipesButton('5')} style={{ justifyContent: 'center', alignItems: 'center' }}  >
+                            <Text style={{ color: Colors.primary, fontSize: RFPercentage(1.8), fontFamily: 'Montserrat_600SemiBold' }} >
+                                Created by me
+                            </Text>
+                            {recipesButton == '5' ?
                                 <View style={{ width: RFPercentage(14), height: RFPercentage(0.7), borderRadius: RFPercentage(0.5), backgroundColor: Colors.secondary }} />
                                 :
                                 null
@@ -374,9 +386,6 @@ function MealPlanScreen(props) {
                                                 <Text style={{ color: Colors.white, fontSize: RFPercentage(2.2), fontFamily: 'Montserrat_500Medium' }} >
                                                     {item.imageTitle}
                                                 </Text>
-                                                <TouchableOpacity activeOpacity={0.8} style={{ position: 'absolute', right: 0 }} >
-                                                    <AntDesign name="pluscircleo" style={{ fontSize: RFPercentage(3.7) }} color={Colors.secondary} />
-                                                </TouchableOpacity>
                                             </View>
                                         </ImageBackground>
                                     </View>
@@ -426,14 +435,14 @@ function MealPlanScreen(props) {
                                     keyExtractor={allCartData => allCartData.id.toString()}
                                     renderItem={({ item }) =>
 
-                                        <TouchableOpacity activeOpacity={0.8} style={{ marginHorizontal: RFPercentage(1.5), marginVertical: RFPercentage(1.5) }} >
+                                        <TouchableOpacity activeOpacity={0.8} onPress={() => props.navigation.navigate("DetailsScreen")} style={{ marginHorizontal: RFPercentage(1.5), marginVertical: RFPercentage(1.5) }} >
                                             <ImageBackground style={{ overflow: 'hidden', width: RFPercentage(22), height: RFPercentage(24), borderRadius: RFPercentage(3) }} source={item.imageSource} >
                                                 {/* Heart and Plus Icon */}
                                                 <View style={{ marginTop: RFPercentage(2), width: '96%', justifyContent: 'flex-end', alignItems: 'center', flexDirection: 'row' }} >
                                                     <TouchableOpacity activeOpacity={0.8} onPress={() => setHeart(true)}   >
                                                         <AntDesign name="heart" style={{ fontSize: RFPercentage(3.5) }} color={"rgba(139, 32, 136, 0.4)"} />
                                                     </TouchableOpacity>
-                                                    <TouchableOpacity activeOpacity={0.8} style={{ marginLeft: RFPercentage(1.5) }} >
+                                                    <TouchableOpacity activeOpacity={0.8} onPress={() => props.navigation.navigate("AddFoodToMealPlanScreen")} style={{ marginLeft: RFPercentage(1.5) }} >
                                                         <AntDesign name="pluscircleo" style={{ fontSize: RFPercentage(3.5) }} color={Colors.white} />
                                                     </TouchableOpacity>
                                                 </View>
@@ -457,7 +466,7 @@ function MealPlanScreen(props) {
                         null
                     }
 
-                    {/* Foods Favourite Body */}
+                    {/* Foods Body */}
                     {recipesButton == '3' ?
                         <View style={{ justifyContent: 'center', alignItems: 'center', width: '100%', marginTop: RFPercentage(6) }}>
 
@@ -502,7 +511,75 @@ function MealPlanScreen(props) {
                                                         <TouchableOpacity activeOpacity={0.8} onPress={() => setHeart(true)}   >
                                                             <AntDesign name="heart" style={{ fontSize: RFPercentage(3.5) }} color={"rgba(139, 32, 136, 0.4)"} />
                                                         </TouchableOpacity>
-                                                        <TouchableOpacity activeOpacity={0.8} style={{ marginLeft: RFPercentage(1.5) }} >
+                                                        <TouchableOpacity activeOpacity={0.8} onPress={() => props.navigation.navigate("AddFoodToMealPlanScreen")} style={{ marginLeft: RFPercentage(1.5) }} >
+                                                            <AntDesign name="pluscircleo" style={{ fontSize: RFPercentage(3.5) }} color={Colors.primary} />
+                                                        </TouchableOpacity>
+                                                    </View>
+                                                    {/* Bottom View of Image */}
+                                                    <View style={{ position: 'absolute', bottom: 0, width: '100%', height: RFPercentage(6), backgroundColor: Colors.newInputFieldBorder, justifyContent: 'center', alignItems: 'center' }} >
+                                                        <Text style={{ color: Colors.primary, fontSize: RFPercentage(1.9), fontFamily: 'Montserrat_600SemiBold' }} >
+                                                            {item.title}
+                                                        </Text>
+                                                    </View>
+                                                </ImageBackground>
+                                            </TouchableOpacity>
+                                        </TouchableOpacity>
+                                    }
+                                />
+                            </View>
+
+                            <View style={{ marginBottom: RFPercentage(6) }} />
+                        </View>
+                        :
+                        null
+                    }
+
+                    {/* Favourite Body */}
+                    {recipesButton == '4' ?
+                        <View style={{ justifyContent: 'center', alignItems: 'center', width: '100%', marginTop: RFPercentage(6) }}>
+
+                            {/* Input field */}
+                            <View style={{ justifyContent: 'center', alignItems: 'center', width: '100%' }}>
+                                {inputField.map((item, i) => (
+                                    <View key={i} style={{ marginTop: i == 0 ? RFPercentage(2) : RFPercentage(1.8) }} >
+                                        <InputField
+                                            placeholder={item.placeholder}
+                                            placeholderColor={Colors.darkGrey}
+                                            height={RFPercentage(6)}
+                                            leftIconName={item.iconName}
+                                            backgroundColor={Colors.white}
+                                            borderWidth={RFPercentage(0.2)}
+                                            borderColor={Colors.white}
+                                            secure={item.secure}
+                                            borderRadius={RFPercentage(20)}
+                                            color={Colors.black}
+                                            fontSize={RFPercentage(2)}
+                                            handleFeild={(text) => handleChange(text, i)}
+                                            value={item.value}
+                                            width={"92%"}
+                                        />
+                                    </View>
+                                ))}
+                            </View>
+
+                            <View style={{ width: '100%', justifyContent: 'center', alignItems: 'center', alignSelf: 'center' }} >
+                                <FlatList
+                                    data={foodsFavouriteCartData}
+                                    contentContainerStyle={{ height: RFPercentage(140) }}
+                                    showsVerticalScrollIndicator={false}
+                                    numColumns={2}
+                                    keyExtractor={foodsFavouriteCartData => foodsFavouriteCartData.id.toString()}
+                                    renderItem={({ item }) =>
+
+                                        <TouchableOpacity activeOpacity={0.8} style={{ marginHorizontal: RFPercentage(1.5), marginVertical: RFPercentage(2.2) }} >
+                                            <TouchableOpacity activeOpacity={0.8} onPress={() => props.navigation.navigate("DetailsScreen")} >
+                                                <ImageBackground style={{ overflow: 'hidden', width: RFPercentage(22), height: RFPercentage(24), borderRadius: RFPercentage(3) }} source={item.imageSource} >
+                                                    {/* Heart and Plus Icon */}
+                                                    <View style={{ marginTop: RFPercentage(2), width: '96%', justifyContent: 'flex-end', alignItems: 'center', flexDirection: 'row' }} >
+                                                        <TouchableOpacity activeOpacity={0.8} onPress={() => setHeart(true)}   >
+                                                            <AntDesign name="heart" style={{ fontSize: RFPercentage(3.5) }} color={"rgba(139, 32, 136, 0.4)"} />
+                                                        </TouchableOpacity>
+                                                        <TouchableOpacity activeOpacity={0.8} onPress={() => props.navigation.navigate("AddFoodToMealPlanScreen")} style={{ marginLeft: RFPercentage(1.5) }} >
                                                             <AntDesign name="pluscircleo" style={{ fontSize: RFPercentage(3.5) }} color={Colors.primary} />
                                                         </TouchableOpacity>
                                                     </View>
@@ -526,7 +603,7 @@ function MealPlanScreen(props) {
                     }
 
                     {/* Created by me Body */}
-                    {recipesButton == '4' ?
+                    {recipesButton == '5' ?
                         <View style={{ justifyContent: 'center', alignItems: 'center', width: '100%', marginTop: RFPercentage(6) }}>
 
                             <View style={{ marginTop: RFPercentage(14), width: '90%', justifyContent: 'center', alignItems: 'center', flexDirection: 'row' }} >
@@ -576,7 +653,7 @@ function MealPlanScreen(props) {
                                     keyExtractor={createdByMeCartData => createdByMeCartData.id.toString()}
                                     renderItem={({ item }) =>
 
-                                        <TouchableOpacity activeOpacity={0.8} style={{ marginHorizontal: RFPercentage(1.5), marginVertical: RFPercentage(2.2) }} >
+                                        <TouchableOpacity activeOpacity={0.8} onPress={() => props.navigation.navigate("DetailsScreen")} style={{ marginHorizontal: RFPercentage(1.5), marginVertical: RFPercentage(2.2) }} >
                                             <ImageBackground style={{ overflow: 'hidden', width: RFPercentage(22), height: RFPercentage(24), borderRadius: RFPercentage(3) }} source={item.imageSource} >
                                                 {/* Heart and Plus Icon */}
                                                 <View style={{ marginTop: RFPercentage(2), width: '96%', justifyContent: 'flex-end', alignItems: 'center', flexDirection: 'row' }} >
@@ -586,7 +663,7 @@ function MealPlanScreen(props) {
                                                     <TouchableOpacity activeOpacity={0.8} onPress={() => setHeart(true)}   >
                                                         <AntDesign name="heart" style={{ fontSize: RFPercentage(3.5) }} color={"rgba(139, 32, 136, 0.4)"} />
                                                     </TouchableOpacity>
-                                                    <TouchableOpacity activeOpacity={0.8} style={{ marginLeft: RFPercentage(1.5) }} >
+                                                    <TouchableOpacity activeOpacity={0.8} onPress={() => props.navigation.navigate("AddFoodToMealPlanScreen")} style={{ marginLeft: RFPercentage(1.5) }} >
                                                         <AntDesign name="pluscircleo" style={{ fontSize: RFPercentage(3.5) }} color={Colors.purple} />
                                                     </TouchableOpacity>
                                                 </View>
@@ -760,12 +837,61 @@ function MealPlanScreen(props) {
                     }
 
                     {glGiButton == '2' ?
-                        <Text>
-                            Hello
-                        </Text>
+                        <View style={{ width: RFPercentage(50), borderRadius: RFPercentage(2), marginTop: RFPercentage(2), height: RFPercentage(46), backgroundColor: Colors.white, justifyContent: 'flex-start', alignItems: 'center' }} >
+
+                            <View style={{ width: '100%', justifyContent: 'center', alignItems: 'center', alignSelf: 'center' }} >
+                                <FlatList
+                                    data={giData}
+                                    contentContainerStyle={{ height: RFPercentage(130) }}
+                                    showsVerticalScrollIndicator={false}
+                                    numColumns={1}
+                                    keyExtractor={giData => giData.id.toString()}
+                                    renderItem={({ item }) =>
+
+                                        <View style={{ width: RFPercentage(50), justifyContent: 'flex-start', alignItems: 'center', borderBottomColor: Colors.primary, borderBottomWidth: RFPercentage(0.1) }} >
+                                            <View style={{ width: '90%', justifyContent: 'center', alignItems: 'center', flexDirection: 'row' }} >
+                                                {/* Left Pic */}
+                                                <View style={{ position: 'absolute', left: 0, alignItems: 'center', justifyContent: 'center' }} >
+                                                    <TouchableOpacity activeOpacity={0.8} >
+                                                        <Image style={{ width: RFPercentage(18), height: RFPercentage(9), borderRadius: RFPercentage(2) }} source={item.leftImageSource} />
+                                                    </TouchableOpacity>
+                                                    <Text style={{ marginTop: RFPercentage(1), color: Colors.primary, fontSize: RFPercentage(2.6), fontFamily: 'Montserrat_600SemiBold' }} >
+                                                        {item.leftImageTitle}
+                                                    </Text>
+                                                    <Text style={{ marginTop: RFPercentage(1.2), color: Colors.darkGrey, fontSize: RFPercentage(2), fontFamily: 'Montserrat_600SemiBold' }} >
+                                                        {item.leftGl}
+                                                    </Text>
+                                                    <Text style={{ marginTop: RFPercentage(0.5), color: Colors.darkGrey, fontSize: RFPercentage(2), fontFamily: 'Montserrat_600SemiBold' }} >
+                                                        {item.leftGi}
+                                                    </Text>
+                                                </View>
+                                                <View style={{ width: RFPercentage(0.1), height: RFPercentage(25), backgroundColor: Colors.primary }} />
+                                                {/* Right Pic */}
+                                                <View style={{ position: 'absolute', right: RFPercentage(1), alignItems: 'center', justifyContent: 'center' }} >
+                                                    <TouchableOpacity activeOpacity={0.8} >
+                                                        <Image style={{ width: RFPercentage(18), height: RFPercentage(9), borderRadius: RFPercentage(2) }} source={item.rightImageSource} />
+                                                    </TouchableOpacity>
+                                                    <Text style={{ marginTop: RFPercentage(1), color: Colors.primary, fontSize: RFPercentage(2.6), fontFamily: 'Montserrat_600SemiBold' }} >
+                                                        {item.rightImageTitle}
+                                                    </Text>
+                                                    <Text style={{ marginTop: RFPercentage(1.2), color: Colors.darkGrey, fontSize: RFPercentage(2), fontFamily: 'Montserrat_600SemiBold' }} >
+                                                        {item.rightGl}
+                                                    </Text>
+                                                    <Text style={{ marginTop: RFPercentage(0.5), color: Colors.darkGrey, fontSize: RFPercentage(2), fontFamily: 'Montserrat_600SemiBold' }} >
+                                                        {item.rightGi}
+                                                    </Text>
+                                                </View>
+                                            </View>
+                                        </View>
+                                    }
+                                />
+                            </View>
+                        </View>
                         :
                         null
                     }
+
+
                 </View>
                 :
                 null

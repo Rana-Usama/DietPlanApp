@@ -124,22 +124,6 @@ function PersonalizedMealPlanScreen(props) {
                         ))}
                     </View>
 
-                    <View style={{ marginTop: RFPercentage(3), width: '90%', justifyContent: 'flex-start', alignItems: 'center', flexDirection: 'row', alignSelf: 'center' }} >
-                        <Text style={{ marginRight: RFPercentage(4), color: Colors.primary, fontSize: RFPercentage(2), fontFamily: 'Montserrat_500Medium' }} >
-                            Meal Date
-                        </Text>
-
-                        <View style={{ marginLeft: RFPercentage(3), width: '60%', height: RFPercentage(6), backgroundColor: Colors.white, borderRadius: RFPercentage(20), justifyContent: 'center', alignItems: 'center' }} >
-                            <View style={{ flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', width: '90%' }} >
-                                <Text style={{ color: Colors.darkGrey, fontSize: RFPercentage(1.8) }} >
-                                    {date.toDateString()}
-                                </Text>
-                                <TouchableOpacity onPress={() => setIsDateTimePickerVisible(true)} style={{ position: 'absolute', right: 0 }} >
-                                    <AntDesign name="caretdown" style={{ fontSize: RFPercentage(2) }} color={Colors.darkGrey} />
-                                </TouchableOpacity>
-                            </View>
-                        </View>
-                    </View>
 
                     <View style={{ right: RFPercentage(-3), flexDirection: 'row', marginTop: RFPercentage(3), width: '100%', justifyContent: 'flex-end', alignItems: 'center', alignSelf: 'center' }} >
                         {/* Button */}
@@ -158,11 +142,11 @@ function PersonalizedMealPlanScreen(props) {
                     </View>
 
                     {/* White Box */}
-                    <View style={{ marginTop: RFPercentage(3), borderRadius: RFPercentage(2), width: '85%', height: RFPercentage(40), backgroundColor: Colors.white, justifyContent: 'flex-start', alignItems: 'center' }} >
+                    <View style={{ marginTop: RFPercentage(3), borderRadius: RFPercentage(2), width: '85%', height: RFPercentage(60), backgroundColor: Colors.white, justifyContent: 'flex-start', alignItems: 'center' }} >
                         <ScrollView style={{ flex: 1, width: '100%' }} >
                             <View style={{ justifyContent: 'center', alignItems: 'center', width: '100%' }}>
                                 {/*Meal Plan Name Input field */}
-                                <View style={{ justifyContent: 'center', alignItems: 'center', width: '100%' }}>
+                                <View style={{ justifyContent: 'center', alignItems: 'center', width: '100%', marginTop: RFPercentage(2) }}>
                                     {inputField2.map((item, i) => (
                                         <View key={i} style={{ justifyContent: 'center', alignItems: 'center', flexDirection: 'row', marginTop: i == 0 ? RFPercentage(2) : RFPercentage(1.8) }} >
                                             <InputField
@@ -256,7 +240,7 @@ function PersonalizedMealPlanScreen(props) {
                                 </View>
 
                                 {/* Button */}
-                                <View style={{ width: "100%", alignItems: "center", marginTop: RFPercentage(3) }}>
+                                <View style={{ width: "100%", alignItems: "center", marginTop: RFPercentage(6) }}>
                                     <MyAppButton
                                         title="Add"
                                         // onPress={() => handleLogin()}
@@ -271,7 +255,7 @@ function PersonalizedMealPlanScreen(props) {
                                     />
                                 </View>
 
-                                <View style={{ marginBottom: RFPercentage(3) }} />
+
                             </View>
                         </ScrollView>
                     </View>

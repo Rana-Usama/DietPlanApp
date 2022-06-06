@@ -10,6 +10,7 @@ import BottomTab from '../components/common/BottomTab';
 
 //config
 import Colors from '../config/Colors';
+import UpdateWeightScreen from './UpdateWeightScreen';
 
 function ProgressScreen(props) {
 
@@ -166,9 +167,9 @@ function ProgressScreen(props) {
                                                     </Text>
                                                 </View>
                                             </View>
-                                            <TouchableOpacity activeOpacity={0.8} style={{ position: 'absolute', right: 0, width: RFPercentage(10), height: RFPercentage(4), backgroundColor: Colors.grey, borderRadius: RFPercentage(20), justifyContent: 'center', alignItems: 'center' }} >
+                                            <TouchableOpacity activeOpacity={0.8} onPress={() => props.navigation.navigate("UpdateWeightScreen")} style={{ position: 'absolute', right: 0, width: RFPercentage(10), height: RFPercentage(4), backgroundColor: Colors.grey, borderRadius: RFPercentage(20), justifyContent: 'center', alignItems: 'center' }} >
                                                 <Text style={{ color: Colors.primary, fontSize: RFPercentage(2) }} >
-                                                    Photo
+                                                    Update
                                                 </Text>
                                             </TouchableOpacity>
                                         </View>
@@ -188,9 +189,9 @@ function ProgressScreen(props) {
                                                     </Text>
                                                 </View>
                                             </View>
-                                            <TouchableOpacity activeOpacity={0.8} style={{ position: 'absolute', right: 0, width: RFPercentage(10), height: RFPercentage(4), backgroundColor: Colors.grey, borderRadius: RFPercentage(20), justifyContent: 'center', alignItems: 'center' }} >
+                                            <TouchableOpacity activeOpacity={0.8} onPress={() => props.navigation.navigate("UpdateWeightScreen")} style={{ position: 'absolute', right: 0, width: RFPercentage(10), height: RFPercentage(4), backgroundColor: Colors.grey, borderRadius: RFPercentage(20), justifyContent: 'center', alignItems: 'center' }} >
                                                 <Text style={{ color: Colors.primary, fontSize: RFPercentage(2) }} >
-                                                    Photo
+                                                    Update
                                                 </Text>
                                             </TouchableOpacity>
                                         </View>
@@ -210,9 +211,9 @@ function ProgressScreen(props) {
                                                     </Text>
                                                 </View>
                                             </View>
-                                            <TouchableOpacity activeOpacity={0.8} style={{ position: 'absolute', right: 0, width: RFPercentage(10), height: RFPercentage(4), backgroundColor: Colors.grey, borderRadius: RFPercentage(20), justifyContent: 'center', alignItems: 'center' }} >
+                                            <TouchableOpacity activeOpacity={0.8} onPress={() => props.navigation.navigate("UpdateWeightScreen")} style={{ position: 'absolute', right: 0, width: RFPercentage(10), height: RFPercentage(4), backgroundColor: Colors.grey, borderRadius: RFPercentage(20), justifyContent: 'center', alignItems: 'center' }} >
                                                 <Text style={{ color: Colors.primary, fontSize: RFPercentage(2) }} >
-                                                    Photo
+                                                    Update
                                                 </Text>
                                             </TouchableOpacity>
                                         </View>
@@ -232,9 +233,9 @@ function ProgressScreen(props) {
                                                     </Text>
                                                 </View>
                                             </View>
-                                            <TouchableOpacity activeOpacity={0.8} style={{ position: 'absolute', right: 0, width: RFPercentage(10), height: RFPercentage(4), backgroundColor: Colors.grey, borderRadius: RFPercentage(20), justifyContent: 'center', alignItems: 'center' }} >
+                                            <TouchableOpacity activeOpacity={0.8} onPress={() => props.navigation.navigate("UpdateWeightScreen")} style={{ position: 'absolute', right: 0, width: RFPercentage(10), height: RFPercentage(4), backgroundColor: Colors.grey, borderRadius: RFPercentage(20), justifyContent: 'center', alignItems: 'center' }} >
                                                 <Text style={{ color: Colors.primary, fontSize: RFPercentage(2) }} >
-                                                    Photo
+                                                    Update
                                                 </Text>
                                             </TouchableOpacity>
                                         </View>
@@ -299,7 +300,7 @@ function ProgressScreen(props) {
                                         </View>
                                         <TouchableOpacity activeOpacity={0.8} style={{ position: 'absolute', right: 0, width: RFPercentage(10), height: RFPercentage(4), backgroundColor: Colors.grey, borderRadius: RFPercentage(20), justifyContent: 'center', alignItems: 'center' }} >
                                             <Text style={{ color: Colors.primary, fontSize: RFPercentage(2) }} >
-                                                Photo
+                                                Update
                                             </Text>
                                         </TouchableOpacity>
                                     </View>
@@ -321,7 +322,7 @@ function ProgressScreen(props) {
                                         </View>
                                         <TouchableOpacity activeOpacity={0.8} style={{ position: 'absolute', right: 0, width: RFPercentage(10), height: RFPercentage(4), backgroundColor: Colors.grey, borderRadius: RFPercentage(20), justifyContent: 'center', alignItems: 'center' }} >
                                             <Text style={{ color: Colors.primary, fontSize: RFPercentage(2) }} >
-                                                Photo
+                                                Update
                                             </Text>
                                         </TouchableOpacity>
                                     </View>

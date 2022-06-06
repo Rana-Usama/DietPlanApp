@@ -25,6 +25,7 @@ import ForgetPasswordScreen from './app/screens/ForgetPasswordScreen';
 
 //config
 import Colors from './app/config/Colors';
+import UpdateWeightScreen from './app/screens/UpdateWeightScreen';
 
 const Stack = createStackNavigator();
 
@@ -60,6 +61,7 @@ export default function App() {
         <Stack.Screen name="ProgressScreen" component={ProgressScreen} />
         <Stack.Screen name="ScheduleScreen" component={ScheduleScreen} />
         <Stack.Screen name="ForgetPasswordScreen" component={ForgetPasswordScreen} />
+        <Stack.Screen name="UpdateWeightScreen" component={UpdateWeightScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
